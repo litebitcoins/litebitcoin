@@ -10,14 +10,23 @@ LiteBitcoin is also the name of the open source software which enables the use o
 LiteBitcoin specifications:
 
 Scrypt-algo - "Proof of Work" crypto currency.
+
 Algorithms: SCRYPT
+
 Abbreviation: LBTC
+
 Address letter: 2
+
 Total coin supply: 1 Billion LiteBitcoins
+
 Block Reward: 500 LBTC
+
 Block Time: 5 minutes
+
 P2P Port: 19037
+
 RPC Port: 19038
+
 
 
 
