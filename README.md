@@ -7,10 +7,9 @@ LiteBitcoin uses peer-to-peer technology to operate with no central authority: m
 LiteBitcoin is also the name of the open source software which enables the use of this currency.
 
 
-LiteBitcoin specifications
+LiteBitcoin specifications:
 
 Scrypt-algo - "Proof of Work" crypto currency.
-
 Algorithms: SCRYPT
 Abbreviation: LBTC
 Address letter: 2
