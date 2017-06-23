@@ -14,8 +14,8 @@ LiteBitcoin integration/staging tree
 
 http://www.lbtc.info
 
-Copyright (c) 2009-2014 Bitcoin Developers
-Copyright (c) 2011-2014 LiteBitcoin Developers
+Copyright (c) 2009-2017 Bitcoin Developers
+Copyright (c) 2011-2017 LiteBitcoin Developers
 
 ----------------
 
