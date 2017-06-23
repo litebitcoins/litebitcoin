@@ -17,7 +17,6 @@ http://www.lbtc.info
 Copyright (c) 2009-2014 Bitcoin Developers
 Copyright (c) 2011-2014 LiteBitcoin Developers
 
-What is LiteBitcoin?
 ----------------
 
 LiteBitcoin is a lite version of Bitcoin using scrypt as a proof-of-work algorithm.
