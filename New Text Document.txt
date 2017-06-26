@@ -1,0 +1,71 @@
+Affiliate link
+
+https://minergate.com/a/db4ae43a5fac82fc6e47eeff		https://goo.gl/fqXQlJ
+
+minergatercb1@mailinator.com
+
+google cloud:-
+720hash/s		200bcn/hour	20hours/day	30days*20hours=600hours/day		600hours*200bcn=1,20,000
+1bcn=0.00000010btc		1,20,000bcn=0.00000010*1,20,000bcn=0.012btc
+1btc=1200USD		0.012btc= 14USD :-/
+
+expanses 300USD		20100inr
+
+
+Microsoft Azure:-
+670hash/s		200bcn/hour	20hours/day	30days*20hours=600hours/day		600hours*200bcn=1,20,000
+1bcn=0.00000010btc		1,20,000bcn=0.00000010*1,20,000bcn=0.012btc
+1btc=1200USD		0.012btc= 14USD :-/
+
+expanses 300USD		47500inr
+
+minerd  --url=stratum+tcp://45.32.119.70:3008  --userpass=RGx99q2QKcqVKnw4MyuUmjPXfSyD8kqZhg:x
+excavator.exe -a sha256t -s  oc.pool.mn:2947 -u chandu141.one1 -p password
+
+rcbwallet1
+9966183898@rcb
+=====================================================
+https://us-west-2.console.aws.amazon.com/console/home?region=us-west-2#
+
+C:\Users\RCB\Downloads\testing01.pem
+C:\Users\RCB\Downloads\test.pem
+==========================================
+ssh -i "testing1.pem" ubuntu@ec2-54-149-128-136.us-west-2.compute.amazonaws.com
+
+
+https://portal.azure.com/
+
+vrchandra.bose@gmail.com
+
+IP			13.71.114.181
+
+Vertual Machine name	test8cu
+User name		test8cu
+pass			9966183898@test8
+			
+13.71.116.206
+$ sudo passwd root
+
+=======================================
+https://console.cloud.google.com/
+===============================
+mining setup and mining with minergate on ubuntu
+
+sudo apt-get update && wget https://minergate.com/download/deb-cli -O minergate-cli.deb && sudo dpkg -i minergate-cli.deb
+
+minergate-cli -user YOUR-EMAIL -bcn 2 -fcn+dsh 2
+
+minergate-cli -user chandu4career@gmail.com -bcn 16
+------------------------------------
+Run this command to install MG-CLI:
+sudo apt-get update && wget https://minergate.com/download/deb-cli -O minergate-cli.deb && sudo dpkg -i minergate-cli.deb
+
+to start miner (4 cores for BCN) use this command:
+minergate-cli -user <YOUR@EMAIL.KAPPA> -bcn 4
+
+
+
+2017-Apr-17 02:50:00.976308 INFO    Generated new wallet: 226iz8EkyzK6ms6EdFSj9f6mz21ZBaHsAYn3TPwBcMRVf2C6Xzx7TGma4AzA68hTzbgRifvFvQB3dV7At9hMguxhJ5uyCd8
+2017-Apr-17 02:50:00.976308 INFO    view key: 51d32393ca88364358fdf542bd81309836183add272fae73f7ff8c3fda212804
+
+start_mining 2AbjeBep8mfRXFMehPzzqTB57kijFPeexWXRd2NgRBAhA3dmxFEV5RKKvLAGmUHBGeQNjBFhhJA9FLAvsnfKPiHj6Mu7Tu2 [threads=1]
