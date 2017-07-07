@@ -36,7 +36,7 @@ class BloomTest {
     filter_.clear();
   }
 
-  vid Add(const Slice& s) {
+  void Add(const Slice& s) {
     keys_.push_back(s.ToString());
   }
 
