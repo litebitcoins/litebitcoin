@@ -477,13 +477,13 @@ void SendCoinsDialog::coinControlChangeEdited(const QString & text)
         CoinControlDialog::coinControl->destChange = CBitcoinAddress(text.toStdString()).Get();
         
         // label for the change address
-        ui->labelCoinControlChangeLabel->setStyleSheet("QLabel{color:black;}");
+        ui->labelCoinControlChangeLabel->setStyleSheet("QLabel{color:white;}");
         if (text.isEmpty())
             ui->labelCoinControlChangeLabel->setText("");
         else if (!CBitcoinAddress(text.toStdString()).IsValid())
         {
             ui->labelCoinControlChangeLabel->setStyleSheet("QLabel{color:red;}");
-            ui->labelCoinControlChangeLabel->setText(tr("Warning: Invalid Bitcoin address"));
+            ui->labelCoinControlChangeLabel->setText(tr("  Warning: Invalid LiteBitcoin address  "));
         }
         else
         {
@@ -496,11 +496,11 @@ void SendCoinsDialog::coinControlChangeEdited(const QString & text)
                 CKeyID keyid;
                 CBitcoinAddress(text.toStdString()).GetKeyID(keyid);   
                 if (model->getPubKey(keyid, pubkey))
-                    ui->labelCoinControlChangeLabel->setText(tr("(no label)"));
+                    ui->labelCoinControlChangeLabel->setText(tr("  (no label)  "));
                 else
                 {
                     ui->labelCoinControlChangeLabel->setStyleSheet("QLabel{color:red;}");
-                    ui->labelCoinControlChangeLabel->setText(tr("Warning: Unknown change address"));
+                    ui->labelCoinControlChangeLabel->setText(tr("  Warning: Unknown change address  "));
                 }
             }
         }
@@ -539,4 +539,5 @@ void SendCoinsDialog::coinControlUpdateLabels()
         ui->labelCoinControlInsuffFunds->hide();
     }
 }
+
 

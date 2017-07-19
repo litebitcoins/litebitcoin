@@ -1,4 +1,4 @@
-<!DOCTYPE RCC><RCC version="1.0">
+<RCC>
     <qresource prefix="/icons">
         <file alias="bitcoin">res/icons/bitcoin.png</file>
         <file alias="address-book">res/icons/address-book.png</file>
@@ -40,11 +40,27 @@
         <file alias="filesave">res/icons/filesave.png</file>
         <file alias="qrcode">res/icons/qrcode.png</file>
         <file alias="debugwindow">res/icons/debugwindow.png</file>
+        <file alias="transaction_conflicted">res/icons/transaction_conflicted.png</file>
+        <file alias="verify">res/icons/verify.png</file>
+        <file alias="eye">res/icons/eye.png</file>
+        <file alias="eye_minus">res/icons/eye_minus.png</file>
+        <file alias="eye_plus">res/icons/eye_plus.png</file>
     </qresource>
     <qresource prefix="/images">
         <file alias="about">res/images/about.png</file>
         <file alias="splash">res/images/splash.png</file>
         <file alias="splash_testnet">res/images/splash_testnet.png</file>
+        <file alias="ltbcbg">res/images/ltbcbg.png</file>
+        <file alias="about2">res/images/about2.png</file>
+        <file alias="checked">res/images/checked.png</file>
+        <file alias="drkblue_downArrow">res/images/drkblue_downArrow.png</file>
+        <file alias="drkblue_downArrow_small">res/images/drkblue_downArrow_small.png</file>
+        <file alias="drkblue_leftArrow_small">res/images/drkblue_leftArrow_small.png</file>
+        <file alias="drkblue_qtreeview_selected">res/images/drkblue_qtreeview_selected.png</file>
+        <file alias="drkblue_rightArrow_small">res/images/drkblue_rightArrow_small.png</file>
+        <file alias="drkblue_upArrow_small">res/images/drkblue_upArrow_small.png</file>
+        <file alias="unchecked">res/images/unchecked.png</file>
+        <file alias="lbtcendbtc">res/images/lbtcendbtc.png</file>
     </qresource>
     <qresource prefix="/movies">
         <file alias="update_spinner">res/movies/update_spinner.mng</file>
@@ -97,5 +113,8 @@
         <file alias="uk">locale/bitcoin_uk.qm</file>
         <file alias="zh_CN">locale/bitcoin_zh_CN.qm</file>
         <file alias="zh_TW">locale/bitcoin_zh_TW.qm</file>
+    </qresource>
+    <qresource prefix="/css">
+        <file alias="drkblue">res/css/drkblue.css</file>
     </qresource>
 </RCC>

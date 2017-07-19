@@ -3,7 +3,6 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include <QApplication>
-
 #include "guiutil.h"
 
 #include "bitcoinaddressvalidator.h"
@@ -28,6 +27,7 @@
 #include <QFileDialog>
 #include <QDesktopServices>
 #include <QThread>
+#include <QSettings>
 
 #include <boost/filesystem.hpp>
 #include <boost/filesystem/fstream.hpp>
@@ -183,6 +183,30 @@ void copyEntryData(QAbstractItemView *view, int column, int role)
         // Copy first item (global mouse selection for e.g. X11 - NOP on Windows)
         QApplication::clipboard()->setText(selection.at(0).data(role).toString(), QClipboard::Selection);
     }
+}
+
+// Open CSS when configured
+QString loadStyleSheet()
+{
+    QString styleSheet;
+    QSettings settings;
+    QString cssName;
+    QString theme = settings.value("theme", "").toString();
+
+    if(!theme.isEmpty()){
+        cssName = QString(":/css/") + theme; 
+    }
+    else {
+        cssName = QString(":/css/drkblue");  
+        settings.setValue("theme", "drkblue");
+    }
+    
+    QFile qFile(cssName);      
+    if (qFile.open(QFile::ReadOnly)) {
+        styleSheet = QLatin1String(qFile.readAll());
+    }
+        
+    return styleSheet;
 }
 
 void setClipboard(const QString& str)
@@ -516,6 +540,8 @@ HelpMessageBox::HelpMessageBox(QWidget *parent) :
     // setMinimumWidth is ignored for QMessageBox so put in non-breaking spaces to make it wider.
     setText(header + QString(QChar(0x2003)).repeated(50));
     setDetailedText(coreOptions + "\n" + uiOptions);
+		    /* Open CSS when configured */
+    this->setStyleSheet(GUIUtil::loadStyleSheet());
 }
 
 void HelpMessageBox::printToConsole()

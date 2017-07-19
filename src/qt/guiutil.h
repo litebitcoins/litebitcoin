@@ -5,9 +5,16 @@
 #ifndef GUIUTIL_H
 #define GUIUTIL_H
 
+#include <QEvent>
+#include <QHeaderView>
 #include <QString>
 #include <QObject>
 #include <QMessageBox>
+#include <QTableView>
+#include <QProgressBar>
+
+#include <boost/filesystem.hpp>
+
 
 class SendCoinsRecipient;
 
@@ -102,6 +109,9 @@ namespace GUIUtil
     bool GetStartOnSystemStartup();
     bool SetStartOnSystemStartup(bool fAutoStart);
 
+	    /** Load global CSS theme */
+    QString loadStyleSheet();
+	
     /** Help message for Bitcoin-Qt, shown with --help. */
     class HelpMessageBox : public QMessageBox
     {

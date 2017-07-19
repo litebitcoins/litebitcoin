@@ -65,6 +65,9 @@ BitcoinGUI::BitcoinGUI(QWidget *parent) :
     rpcConsole(0),
     prevBlocks(0)
 {
+	    /* Open CSS when configured */
+    this->setStyleSheet(GUIUtil::loadStyleSheet());
+
     restoreWindowGeometry();
     setWindowTitle(tr("LiteBitcoin") + " - " + tr("Wallet"));
 #ifndef Q_OS_MAC
@@ -294,6 +297,7 @@ void BitcoinGUI::createToolBars()
     toolbar->addAction(receiveCoinsAction);
     toolbar->addAction(historyAction);
     toolbar->addAction(addressBookAction);
+	toolbar->setMovable(false);
 }
 
 void BitcoinGUI::setClientModel(ClientModel *clientModel)
