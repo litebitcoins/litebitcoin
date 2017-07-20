@@ -1,4 +1,4 @@
-LiteBitcoin 0.8.x BETA
+LiteBitcoin 2.0.0.0
 ====================
 
 Copyright (c) 2009-2014 Bitcoin Developers
