@@ -1174,7 +1174,7 @@ void avgRecentTimestamps(const CBlockIndex* pindexLast, int64_t *avgOf5, int64_t
 }
 
 
-unsigned int GetNextWorkRequired(const CBlockIndex *pindexLast, const CBlockHeader *pblock)
+unsigned static int GetNextWorkRequired(const CBlockIndex *pindexLast, const CBlockHeader *pblock)
 {
     int64_t avgOf5;
     int64_t avgOf9;
