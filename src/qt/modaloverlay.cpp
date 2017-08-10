@@ -11,6 +11,7 @@
 
 #include <QResizeEvent>
 #include <QPropertyAnimation>
+#include <QImage>
 
 ModalOverlay::ModalOverlay(QWidget *parent) :
 QWidget(parent),
