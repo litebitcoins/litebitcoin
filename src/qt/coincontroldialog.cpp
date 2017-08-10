@@ -32,7 +32,10 @@ CoinControlDialog::CoinControlDialog(QWidget *parent) :
     model(0)
 {
     ui->setupUi(this);
-    
+	
+        /* Open CSS when configured */
+    this->setStyleSheet(GUIUtil::loadStyleSheet());
+	
     // context menu actions
     QAction *copyAddressAction = new QAction(tr("Copy address"), this);
     QAction *copyLabelAction = new QAction(tr("Copy label"), this);
