@@ -1,7 +1,7 @@
 TEMPLATE = app
 TARGET = litebitcoin-qt
 macx:TARGET = "LiteBitcoin-Qt"
-VERSION = 0.8.7.5
+VERSION = 2.0.0.0
 INCLUDEPATH += src src/json src/qt
 QT += core gui network
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
