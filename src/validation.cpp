@@ -47,7 +47,7 @@
 #include <boost/thread.hpp>
 
 #if defined(NDEBUG)
-# error "Litecoin cannot be compiled without assertions."
+# error "Litebitcoin cannot be compiled without assertions."
 #endif
 
 /**
@@ -88,7 +88,7 @@ static void CheckBlockIndex(const Consensus::Params& consensusParams);
 /** Constant stuff for coinbase transactions we create: */
 CScript COINBASE_FLAGS;
 
-const std::string strMessageMagic = "Litecoin Signed Message:\n";
+const std::string strMessageMagic = "Litebitcoin Signed Message:\n";
 
 // Internal stuff
 namespace {
@@ -980,7 +980,7 @@ bool AcceptToMemoryPoolWorker(CTxMemPool& pool, CValidationState& state, const C
         // Remove conflicting transactions from the mempool
         BOOST_FOREACH(const CTxMemPool::txiter it, allConflicting)
         {
-            LogPrint("mempool", "replacing tx %s with %s for %s LTC additional fees, %d delta bytes\n",
+            LogPrint("mempool", "replacing tx %s with %s for %s LBTC additional fees, %d delta bytes\n",
                     it->GetTx().GetHash().ToString(),
                     hash.ToString(),
                     FormatMoney(nModifiedFees - nConflictingFees),
@@ -1170,7 +1170,215 @@ CAmount GetBlockSubsidy(int nHeight, const Consensus::Params& consensusParams)
     if (halvings >= 64)
         return 0;
 
-    CAmount nSubsidy = 50 * COIN;
+    CAmount nSubsidy = 500 * COIN;
+		      if(nHeight == 1)
+              {
+              nSubsidy = 160000000 * COIN;
+              }
+			  else if (nHeight == 3339)
+			  {  
+			  nSubsidy = 10 * COIN;
+			  }
+			  else if (nHeight == 3340)
+			  {  
+			  nSubsidy = 10 * COIN;
+			  }
+			  else if (nHeight == 3341)
+			  {  
+			  nSubsidy = 20 * COIN;
+			  }
+			  else if (nHeight == 3342)
+			  {  
+			  nSubsidy = 30 * COIN;
+			  }
+			  else if (nHeight == 3343)
+			  {  
+			  nSubsidy = 40 * COIN;
+			  }
+			  else if (nHeight == 3344)
+			  {  
+			  nSubsidy = 50 * COIN;
+			  }
+			  else if (nHeight == 3345)
+			  {  
+			  nSubsidy = 60 * COIN;
+			  }
+			  else if (nHeight == 3346)
+			  {  
+			  nSubsidy = 70 * COIN;
+			  }
+			  else if (nHeight == 3347)
+			  {  
+			  nSubsidy = 80 * COIN;
+			  }
+			  else if (nHeight == 3348)
+			  {  
+			  nSubsidy = 90 * COIN;
+			  }
+			  else if (nHeight == 3349)
+			  {  
+			  nSubsidy = 100 * COIN;
+			  }
+			  else if (nHeight == 3350)
+			  {  
+			  nSubsidy = 110 * COIN;
+			  }
+			  else if (nHeight == 3351)
+			  {  
+			  nSubsidy = 110 * COIN;
+			  }
+			  else if (nHeight == 3352)
+			  {  
+			  nSubsidy = 110 * COIN;
+			  }
+			  else if (nHeight == 3353)
+			  {  
+			  nSubsidy = 110 * COIN;
+			  }
+			  else if (nHeight == 3354)
+			  {  
+			  nSubsidy = 250 * COIN;
+			  }
+			  else if (nHeight == 3355)
+			  {  
+			  nSubsidy = 250 * COIN;
+			  }
+			  else if (nHeight == 3356)
+			  {  
+			  nSubsidy = 250 * COIN;
+			  }
+			  else if (nHeight == 3357)
+			  {  
+			  nSubsidy = 250 * COIN;
+			  }
+			  else if (nHeight == 3358)
+			  {  
+			  nSubsidy = 250 * COIN;
+			  }
+			  else if (nHeight == 3359)
+			  {  
+			  nSubsidy = 250 * COIN;
+			  }
+			  else if (nHeight == 3360)
+			  {  
+			  nSubsidy = 250 * COIN;
+			  }
+			  else if (nHeight == 3361)
+			  {  
+			  nSubsidy = 250 * COIN;
+			  }
+			  else if (nHeight == 3362)
+			  {  
+			  nSubsidy = 250 * COIN;
+			  }
+			  else if (nHeight == 3363)
+			  {  
+			  nSubsidy = 250 * COIN;
+			  }
+			  else if (nHeight == 3364)
+			  {  
+			  nSubsidy = 250 * COIN;
+			  }
+			  else if (nHeight == 3365)
+			  {  
+			  nSubsidy = 250 * COIN;
+			  }
+			  else if (nHeight == 3366)
+			  {  
+			  nSubsidy = 250 * COIN;
+			  }
+			  else if (nHeight == 3367)
+			  {  
+			  nSubsidy = 250 * COIN;
+			  }
+			  else if (nHeight == 3368)
+			  {  
+			  nSubsidy = 250 * COIN;
+			  }
+			  else if (nHeight == 3369)
+			  {  
+			  nSubsidy = 250 * COIN;
+			  }
+			  else if (nHeight == 3370)
+			  {  
+			  nSubsidy = 250 * COIN;
+			  }
+			  else if (nHeight == 3371)
+			  {  
+			  nSubsidy = 250 * COIN;
+			  }
+			  else if (nHeight == 3372)
+			  {  
+			  nSubsidy = 250 * COIN;
+			  }
+			  else if (nHeight == 3373)
+			  {  
+			  nSubsidy = 250 * COIN;
+			  }
+			  else if (nHeight == 3374)
+			  {  
+			  nSubsidy = 250 * COIN;
+			  }
+			  else if (nHeight == 3375)
+			  {  
+			  nSubsidy = 250 * COIN;
+			  }
+			  else if (nHeight == 3376)
+			  {  
+			  nSubsidy = 250 * COIN;
+			  }
+			  else if (nHeight == 3377)
+			  {  
+			  nSubsidy = 250 * COIN;
+			  }
+			  else if (nHeight == 3378)
+			  {  
+			  nSubsidy = 250 * COIN;
+			  }
+			  else if (nHeight == 3379)
+			  {  
+			  nSubsidy = 250 * COIN;
+			  }
+			  else if (nHeight == 3380)
+			  {  
+			  nSubsidy = 250 * COIN;
+			  }
+			  else if (nHeight == 3381)
+			  {  
+			  nSubsidy = 250 * COIN;
+			  }
+			  else if (nHeight == 3382)
+			  {  
+			  nSubsidy = 250 * COIN;
+			  }
+			  else if (nHeight == 3383)
+			  {  
+			  nSubsidy = 250 * COIN;
+			  }
+			  else if (nHeight == 3384)
+			  {  
+			  nSubsidy = 250 * COIN;
+			  }
+			  else if (nHeight == 3385)
+			  {  
+			  nSubsidy = 250 * COIN;
+			  }
+			  else if (nHeight == 3386)
+			  {  
+			  nSubsidy = 250 * COIN;
+			  }
+			  else if (nHeight == 3387)
+			  {  
+			  nSubsidy = 250 * COIN;
+			  }
+			  else if (nHeight == 3388)
+			  {  
+			  nSubsidy = 250 * COIN;
+			  }
+			  else if (nHeight == 3389)
+			  {  
+			  nSubsidy = 250 * COIN;
+			  }
     // Subsidy is cut in half every 210,000 blocks which will occur approximately every 4 years.
     nSubsidy >>= halvings;
     return nSubsidy;
@@ -3621,7 +3829,7 @@ bool CVerifyDB::VerifyDB(const CChainParams& chainparams, CCoinsView *coinsview,
 
     // Verify blocks in the best chain
     if (nCheckDepth <= 0)
-        // Litecoin: suffices until year 10214. Didn't x4 value due to integer wrap around and upstream compatibility.
+        // Litebitcoin: suffices until year 10214. Didn't x4 value due to integer wrap around and upstream compatibility.
         nCheckDepth = std::numeric_limits<int>::max();
     if (nCheckDepth > chainActive.Height())
         nCheckDepth = chainActive.Height();
