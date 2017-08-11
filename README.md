@@ -35,18 +35,31 @@ The contribution workflow is described in [CONTRIBUTING.md](CONTRIBUTING.md).
 
 
 Specifications
+
 --------------
+
 Name: LiteBitcoin
+
 Ticker: LBTC
+
 PoW Algorithm: Scrypt
+
 Block Reward: 500 LBTC
+
 Address letter: 2
+
 Multisig Address letter: 4
+
 Maturity: 20 blocks
+
 Difficulty Re-target: Every block
+
 P2P Port: 19037
+
 RPC Port: 19038
+
 Total coin supply: 1 Billion Lite-Bitcoins
+
 
 
 Testing
