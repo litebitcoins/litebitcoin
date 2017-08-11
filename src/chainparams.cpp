@@ -73,8 +73,8 @@ public:
         consensus.nSubsidyHalvingInterval = 840000;
         consensus.BIP34Height = 1;
         consensus.BIP34Hash = uint256S("90e718e6878f4b7ae4de4ae83db75881d00ca017f5a117c2054798bcb76c4178");
-        consensus.BIP65Height = 3341; // ?
-        consensus.BIP66Height = 3350; // ?
+        consensus.BIP65Height = 3350; // ?
+        consensus.BIP66Height = 3341; // ?
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); 
         consensus.nPowTargetTimespan = 10 * 60; // 10 min
         consensus.nPowTargetSpacing = 5 * 60;
@@ -120,7 +120,7 @@ public:
         assert(genesis.hashMerkleRoot == uint256S("0x47312f978ba691bfe0dc40e553b0ede5bf58f4e78c8319d755aa5d2672c0da3e"));
 
         // Note that of those with the service bits flag, most only support a subset of possible options
-		vSeeds.push_back(CDNSSeedData("walletbuilders.com", "node.walletbuilders.com"));
+		vSeeds.push_back(CDNSSeedData("litebitcoins.thecryptochat.com", "litebitcoins.thecryptochat.com"));
 		
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,3);   // 2
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);   // 3
