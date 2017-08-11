@@ -1,4 +1,4 @@
-Litebitcoin Core 0.14.2
+Litebitcoin Core 3.0.0.0
 =====================
 
 Intro
@@ -17,7 +17,3 @@ Litebitcoin Core is the original Litebitcoin client and it builds the backbone o
 However, it downloads and stores the entire history of Litebitcoin transactions;
 depending on the speed of your computer and network connection, the synchronization
 process can take anywhere from a few hours to a day or more.
-
-See the litebitcoin wiki at:
-  https://litebitcoin.info/
-for more help and information.
