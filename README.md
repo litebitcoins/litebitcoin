@@ -33,6 +33,7 @@ regularly to indicate new official, stable release versions of Litebitcoin Core.
 The contribution workflow is described in [CONTRIBUTING.md](CONTRIBUTING.md).
 
 
+
 Specifications
 --------------
 Name: LiteBitcoin
