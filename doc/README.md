@@ -5,7 +5,7 @@ Setup
 ---------------------
 Litebitcoin Core is the original Litebitcoin client and it builds the backbone of the network. However, it downloads and stores the entire history of Litebitcoin transactions (which is currently several GBs); depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more.
 
-To download Litebitcoin Core, visit [litebitcoin.org](https://litebitcoin.org).
+To download Litebitcoin Core, visit [lbtc.info](https://lbtc.info).
 
 Running
 ---------------------
@@ -26,13 +26,6 @@ Unpack the files into a directory, and then run litebitcoin-qt.exe.
 
 Drag Litebitcoin-Core to your applications folder, and then run Litebitcoin-Core.
 
-### Need Help?
-
-* See the documentation at the [Litebitcoin Wiki](https://litebitcoin.info/)
-for help and more information.
-* Ask for help on [#litebitcoin](http://webchat.freenode.net?channels=litebitcoin) on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net?channels=litebitcoin).
-* Ask for help on the [LitebitcoinTalk](https://litebitcointalk.io/) forums.
-
 Building
 ---------------------
 The following are developer notes on how to build Litebitcoin on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
@@ -50,7 +43,6 @@ The Litebitcoin repo's [root README](/README.md) contains relevant information o
 - [Developer Notes](developer-notes.md)
 - [Release Notes](release-notes.md)
 - [Release Process](release-process.md)
-- [Source Code Documentation (External Link)](https://dev.visucore.com/litebitcoin/doxygen/)
 - [Translation Process](translation_process.md)
 - [Translation Strings Policy](translation_strings_policy.md)
 - [Travis CI](travis-ci.md)
@@ -59,10 +51,6 @@ The Litebitcoin repo's [root README](/README.md) contains relevant information o
 - [BIPS](bips.md)
 - [Dnsseed Policy](dnsseed-policy.md)
 - [Benchmarking](benchmarking.md)
-
-### Resources
-* Discuss on the [LitebitcoinTalk](https://litebitcointalk.io/) forums.
-* Discuss general Litebitcoin development on #litebitcoin-dev on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net/?channels=litebitcoin-dev).
 
 ### Miscellaneous
 - [Assets Attribution](assets-attribution.md)
