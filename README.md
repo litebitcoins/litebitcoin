@@ -35,7 +35,6 @@ The contribution workflow is described in [CONTRIBUTING.md](CONTRIBUTING.md).
 
 
 Specifications
-
 --------------
 
 Name: LiteBitcoin
