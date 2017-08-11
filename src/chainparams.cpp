@@ -73,8 +73,8 @@ public:
         consensus.nSubsidyHalvingInterval = 840000;
         consensus.BIP34Height = 1;
         consensus.BIP34Hash = uint256S("90e718e6878f4b7ae4de4ae83db75881d00ca017f5a117c2054798bcb76c4178");
-        consensus.BIP65Height = 3341; // bab3041e8977e0dc3eeff63fe707b92bde1dd449d8efafb248c27c8264cc311a
-        consensus.BIP66Height = 3350; // 7aceee012833fa8952f8835d8b1b3ae233cd6ab08fdb27a771d2bd7bdc491894
+        consensus.BIP65Height = 3341; // ?
+        consensus.BIP66Height = 3350; // ?
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); 
         consensus.nPowTargetTimespan = 10 * 60; // 10 min
         consensus.nPowTargetSpacing = 5 * 60;
@@ -100,7 +100,7 @@ public:
         consensus.nMinimumChainWork = uint256S("0x00000000000000000000000000000000000000000000000000038a4a2129d4f4");
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0"); //1155631
+        consensus.defaultAssumeValid = uint256S("0x00dd09e3c495e6928927525bed3a6721033064af385fa8d37fec845cf71a1fdd"); //3337
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -123,10 +123,10 @@ public:
         vFixedSeeds.clear();
         vSeeds.clear();
 		
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,3);
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);
-        base58Prefixes[SCRIPT_ADDRESS2] = std::vector<unsigned char>(1,8);
-        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,131);
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,3);   // 2
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);   // 3
+        base58Prefixes[SCRIPT_ADDRESS2] = std::vector<unsigned char>(1,8);  // 4
+        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,131); // L
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x88)(0xB2)(0x1E).convert_to_container<std::vector<unsigned char> >();
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x88)(0xAD)(0xE4).convert_to_container<std::vector<unsigned char> >();
 
@@ -143,7 +143,7 @@ public:
         };
 
         chainTxData = ChainTxData{
-            // Data as of block b44bc5ae41d1be67227ba9ad875d7268aa86c965b1d64b47c35be6e8d5c352f4 (height 1155626).
+            // Data as of block 90e718e6878f4b7ae4de4ae83db75881d00ca017f5a117c2054798bcb76c4178 (height 1).
             1498217039, // * UNIX timestamp of last known number of transactions
             1,  // * total number of transactions between genesis and that timestamp
                     //   (the tx=... number in the SetBestChain debug.log lines)
