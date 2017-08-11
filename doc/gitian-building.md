@@ -310,7 +310,7 @@ Clone the git repositories for litebitcoin and Gitian.
 ```bash
 git clone https://github.com/devrandom/gitian-builder.git
 git clone https://github.com/litebitcoins/litebitcoin
-git clone https://github.com/litebitcoin-project/gitian.sigs.lbtc.git
+git clone https://github.com/litebitcoins/gitian.sigs.lbtc.git
 ```
 
 Setting up the Gitian image
@@ -475,5 +475,5 @@ Uploading signatures
 ---------------------
 
 After building and signing you can push your signatures (both the `.assert` and `.assert.sig` files) to the
-[litebitcoin-project/gitian.sigs.lbtc](https://github.com/litebitcoin-project/gitian.sigs.lbtc/) repository, or if that's not possible create a pull
+[litebitcoins/gitian.sigs.lbtc](https://github.com/litebitcoins/gitian.sigs.lbtc/) repository, or if that's not possible create a pull
 request. You can also mail the files to thrasher (thrasher@addictionsofware.com) and he will commit them.
