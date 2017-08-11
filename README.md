@@ -6,7 +6,7 @@ Litebitcoin Core integration/staging tree
 https://lbtc.info
 
 What is Litebitcoin?
-----------------
+-------------------
 
 Litebitcoin is an experimental digital currency that enables instant payments to
 anyone, anywhere in the world. Litebitcoin uses peer-to-peer technology to operate
