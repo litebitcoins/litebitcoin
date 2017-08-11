@@ -1,6 +1,6 @@
-Litebitcoin Core version 0.14.2 is now available from:
+Litebitcoin Core version 3.0.0.0 is now available from:
 
-  <https://download.litebitcoin.org/litebitcoin-0.14.2.0/>
+  <https://download.lbtc.info/litebitcoin-3.0.0.0>
 
 This is a new major version release, including new features, various bugfixes
 and performance improvements, as well as updated translations.
@@ -8,10 +8,6 @@ and performance improvements, as well as updated translations.
 Please report bugs using the issue tracker at github:
 
   <https://github.com/litebitcoins/litebitcoin/issues>
-
-To receive security and update notifications, please subscribe to:
-
-  <https://groups.google.com/forum/#!forum/litebitcoin-dev>
 
 Compatibility
 ==============
