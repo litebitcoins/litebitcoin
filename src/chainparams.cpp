@@ -120,7 +120,7 @@ public:
         assert(genesis.hashMerkleRoot == uint256S("0x47312f978ba691bfe0dc40e553b0ede5bf58f4e78c8319d755aa5d2672c0da3e"));
 
         // Note that of those with the service bits flag, most only support a subset of possible options
-		vSeeds.push_back(CDNSSeedData("litebitcoins.thecryptochat.com", "litebitcoins.thecryptochat.com"));
+		vSeeds.push_back(CDNSSeedData("litebitcoins.thecryptochat.net", "litebitcoins.thecryptochat.net"));
 		
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,3);   // 2
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);   // 3
