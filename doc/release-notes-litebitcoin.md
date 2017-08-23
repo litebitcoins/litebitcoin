@@ -1,6 +1,6 @@
-Litebitcoin Core version 3.0.0.0 is now available from:
+Litebitcoin Core version 3.0.1.0 is now available from:
 
-  <https://download.lbtc.info/litebitcoin-3.0.0.0>
+  <https://download.lbtc.info/litebitcoin-3.0.1.0>
 
 This is a new major version release, including new features, various bugfixes
 and performance improvements, as well as updated translations.

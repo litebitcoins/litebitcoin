@@ -1,4 +1,4 @@
-Litebitcoin Core 3.0.0.0
+Litebitcoin Core 3.0.1.0
 =====================
 
 Setup
