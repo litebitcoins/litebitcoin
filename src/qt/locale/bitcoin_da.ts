@@ -2289,7 +2289,7 @@
     </message>
     <message>
         <source>A message that was attached to the litebitcoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Litebitcoin network.</source>
-        <translation>En besked, som blev føjet til “litebitcoin:”-URI'en, som vil gemmes med transaktionen til din reference. Bemærk: Denne besked vil ikke blive sendt over Litebitcoin-netværket.</translation>
+        <translation>En besked, som blev føjet til “bitcon:”-URI'en, som vil gemmes med transaktionen til din reference. Bemærk: Denne besked vil ikke blive sendt over Litebitcoin-netværket.</translation>
     </message>
     <message>
         <source>Pay To:</source>
