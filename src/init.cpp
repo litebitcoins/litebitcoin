@@ -532,7 +532,7 @@ std::string HelpMessage(HelpMessageMode mode)
 std::string LicenseInfo()
 {
     const std::string URL_SOURCE_CODE = "<https://github.com/litebitcoins/litebitcoin>";
-    const std::string URL_WEBSITE = "<https://litebitcoin.org>";
+    const std::string URL_WEBSITE = "<https://lbtc.info>";
 
     return CopyrightHolders(strprintf(_("Copyright (C) %i-%i"), 2011, COPYRIGHT_YEAR) + " ") + "\n" +
            "\n" +
