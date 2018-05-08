@@ -1,6 +1,6 @@
-Litebitcoin Core version *0.15.1* is now available from:
+Litebitcoin Core version *4.0.0.0* is now available from:
 
-  <https://download.litebitcoin.org/litebitcoin-0.15.1/>
+
 
 This is a new minor version release, including various bugfixes and
 performance improvements, as well as updated translations.
@@ -8,10 +8,6 @@ performance improvements, as well as updated translations.
 Please report bugs using the issue tracker at GitHub:
 
   <https://github.com/litebitcoins/litebitcoin/issues>
-
-To receive security and update notifications, please subscribe to:
-
-  <https://groups.google.com/forum/#!forum/litebitcoin-dev>
 
 How to Upgrade
 ==============
@@ -21,16 +17,16 @@ shut down (which might take a few minutes for older versions), then run the
 installer (on Windows) or just copy over `/Applications/Litebitcoin-Qt` (on Mac)
 or `litebitcoind`/`litebitcoin-qt` (on Linux).
 
-The first time you run version 0.15.0 or higher, your chainstate database will
+The first time you run version 3.0.0.0 or higher, your chainstate database will
 be converted to a new format, which will take anywhere from a few minutes to
 half an hour, depending on the speed of your machine.
 
-The file format of `fee_estimates.dat` changed in version 0.15.0. Hence, a
-downgrade from version 0.15 or upgrade to version 0.15 will cause all fee
+The file format of `fee_estimates.dat` changed in version 3.0.0.0. Hence, a
+downgrade from version 0.15 or upgrade to version 3.0.0.0 will cause all fee
 estimates to be discarded.
 
 Note that the block database format also changed in version 0.8.0 and there is no
-automatic upgrade code from before version 0.8 to version 0.15.0. Upgrading
+automatic upgrade code from before version 0.8 to version 3.0.0.0. Upgrading
 directly from 0.7.x and earlier without redownloading the blockchain is not supported.
 However, as usual, old wallet versions are still supported.
 
@@ -38,7 +34,7 @@ Downgrading warning
 -------------------
 
 The chainstate database for this release is not compatible with previous
-releases, so if you run 0.15 and then decide to switch back to any
+releases, so if you run 3.0.0.0 and then decide to switch back to any
 older version, you will need to run the old release with the `-reindex-chainstate`
 option to rebuild the chainstate data structures in the old format.
 
@@ -149,7 +145,7 @@ Low-level RPC changes
   value is passed, instead of returning a list of all wallet transactions since
   the genesis block. The behaviour is unchanged when an empty string is provided.
 
-0.15.1 Change log
+4.0.0.0  bassed at https://github.com/litecoin-project/litecoin/releases/tag/v0.15.1 Change log
 =================
 
 ### Mining
