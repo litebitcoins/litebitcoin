@@ -176,7 +176,7 @@ void SendCoinsDialog::setModel(WalletModel *_model)
         connect(ui->checkBoxMinimumFee, SIGNAL(stateChanged(int)), this, SLOT(setMinimumFee()));
         connect(ui->checkBoxMinimumFee, SIGNAL(stateChanged(int)), this, SLOT(updateFeeSectionControls()));
         connect(ui->checkBoxMinimumFee, SIGNAL(stateChanged(int)), this, SLOT(coinControlUpdateLabels()));
-       // Litecoin: Disabled RBF UI
+       // Litebitcoin: Disabled RBF UI
        // connect(ui->optInRBF, SIGNAL(stateChanged(int)), this, SLOT(updateSmartFeeLabel()));
        // connect(ui->optInRBF, SIGNAL(stateChanged(int)), this, SLOT(coinControlUpdateLabels()));
         ui->customFee->setSingleStep(CWallet::GetRequiredFee(1000));
@@ -185,7 +185,7 @@ void SendCoinsDialog::setModel(WalletModel *_model)
         updateSmartFeeLabel();
 
         // set default rbf checkbox state
-        // Litecoin: Disabled RBF UI
+        // Litebitcoin: Disabled RBF UI
         //ui->optInRBF->setCheckState(model->getDefaultWalletRbf() ? Qt::Checked : Qt::Unchecked);
 
         // set the smartfee-sliders default value (wallets default conf.target or last stored value)
@@ -345,7 +345,7 @@ void SendCoinsDialog::on_sendButton_clicked()
         .arg(alternativeUnits.join(" " + tr("or") + "<br />")));
 
     /*
-    Litecoin: Disabled RBF UI
+    Litebitcoin: Disabled RBF UI
     if (ui->optInRBF->isChecked())
     {
         questionString.append("<hr /><span>");
@@ -652,7 +652,7 @@ void SendCoinsDialog::updateCoinControlState(CCoinControl& ctrl)
     // Avoid using global defaults when sending money from the GUI
     // Either custom fee will be used or if not selected, the confirmation target from dropdown box
     ctrl.m_confirm_target = getConfTargetForIndex(ui->confTargetSelector->currentIndex());
-    // Litecoin: Disabled RBF UI
+    // Litebitcoin: Disabled RBF UI
     //ctrl.signalRbf = ui->optInRBF->isChecked();
 }
 
@@ -781,7 +781,7 @@ void SendCoinsDialog::coinControlChangeEdited(const QString& text)
         }
         else if (!addr.IsValid()) // Invalid address
         {
-            ui->labelCoinControlChangeLabel->setText(tr("Warning: Invalid Litecoin address"));
+            ui->labelCoinControlChangeLabel->setText(tr("Warning: Invalid Litebitcoin address"));
         }
         else // Valid address
         {
