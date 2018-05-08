@@ -50,6 +50,10 @@
         <translation>Velg adressen til å motta mynter med</translation>
     </message>
     <message>
+        <source>C&amp;hoose</source>
+        <translation>V&amp;elg</translation>
+    </message>
+    <message>
         <source>Sending addresses</source>
         <translation>Utsendingsadresser</translation>
     </message>
@@ -58,12 +62,12 @@
         <translation>Mottaksadresser</translation>
     </message>
     <message>
-        <source>These are your Litebitcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Dette er dine Litebitcoin-adresser for sending av betalinger. Sjekk alltid beløpet og mottakeradressen før sending av mynter.</translation>
+        <source>These are your Litecoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Dette er dine Litecoin-adresser for sending av betalinger. Sjekk alltid beløpet og mottakeradressen før sending av mynter.</translation>
     </message>
     <message>
-        <source>These are your Litebitcoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Dette er dine Litebitcoin-adresser for å sende betalinger med. Det er anbefalt å bruke en ny mottaksadresse for hver transaksjon.</translation>
+        <source>These are your Litecoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Dette er dine Litecoin-adresser for å sende betalinger med. Det er anbefalt å bruke en ny mottaksadresse for hver transaksjon.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -136,8 +140,16 @@
         <translation>Krypter lommebok</translation>
     </message>
     <message>
+        <source>This operation needs your wallet passphrase to unlock the wallet.</source>
+        <translation>Denne operasjonen krever adgangsfrasen til lommeboken for å låse den opp.</translation>
+    </message>
+    <message>
         <source>Unlock wallet</source>
         <translation>Lås opp lommebok</translation>
+    </message>
+    <message>
+        <source>This operation needs your wallet passphrase to decrypt the wallet.</source>
+        <translation>Denne operasjonen krever adgangsfrasen til lommeboken for å dekryptere den.</translation>
     </message>
     <message>
         <source>Decrypt wallet</source>
@@ -147,7 +159,67 @@
         <source>Change passphrase</source>
         <translation>Endre adgangsfrase</translation>
     </message>
-    </context>
+    <message>
+        <source>Enter the old passphrase and new passphrase to the wallet.</source>
+        <translation>Angi den gamle og en ny adgangsfrase til lommeboken.</translation>
+    </message>
+    <message>
+        <source>Confirm wallet encryption</source>
+        <translation>Bekreft kryptering av lommebok</translation>
+    </message>
+    <message>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR LITECOINS&lt;/b&gt;!</source>
+        <translation>Advarsel: Hvis du krypterer lommeboken og mister adgangsfrasen, så vil du &lt;b&gt;MISTE ALLE DINE LITECOINS&lt;/b&gt;!</translation>
+    </message>
+    <message>
+        <source>Are you sure you wish to encrypt your wallet?</source>
+        <translation>Er du sikker på at du vil kryptere lommeboken?</translation>
+    </message>
+    <message>
+        <source>Wallet encrypted</source>
+        <translation>Lommebok kryptert</translation>
+    </message>
+    <message>
+        <source>%1 will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your litecoins from being stolen by malware infecting your computer.</source>
+        <translation>%1 vil nå lukkes for å fullføre krypteringsprosessen. Husk at kryptering av lommeboken ikke fullt ut kan beskytte dine litecoins fra å bli stjålet om skadevare infiserer datamaskinen din.</translation>
+    </message>
+    <message>
+        <source>IMPORTANT: Any previous backups you have made of your wallet file should be replaced with the newly generated, encrypted wallet file. For security reasons, previous backups of the unencrypted wallet file will become useless as soon as you start using the new, encrypted wallet.</source>
+        <translation>VIKTIG: Tidligere sikkerhetskopier av din lommebokfil bør erstattes med den nylig genererte og krypterte filen, da de blir ugyldiggjort av sikkerhetshensyn så snart du begynner å bruke den nye krypterte lommeboken.</translation>
+    </message>
+    <message>
+        <source>Wallet encryption failed</source>
+        <translation>Kryptering av lommebok feilet</translation>
+    </message>
+    <message>
+        <source>Wallet encryption failed due to an internal error. Your wallet was not encrypted.</source>
+        <translation>Kryptering av lommebok feilet på grunn av en intern feil. Din lommebok ble ikke kryptert.</translation>
+    </message>
+    <message>
+        <source>The supplied passphrases do not match.</source>
+        <translation>De angitte adgangsfrasene er ulike.</translation>
+    </message>
+    <message>
+        <source>Wallet unlock failed</source>
+        <translation>Opplåsing av lommebok feilet</translation>
+    </message>
+    <message>
+        <source>The passphrase entered for the wallet decryption was incorrect.</source>
+        <translation>Adgangsfrasen angitt for dekryptering av lommeboken var feil.</translation>
+    </message>
+    <message>
+        <source>Wallet decryption failed</source>
+        <translation>Dekryptering av lommebok feilet</translation>
+    </message>
+    <message>
+        <source>Wallet passphrase was successfully changed.</source>
+        <translation>Adgangsfrase for lommebok er endret.</translation>
+    </message>
+    <message>
+        <source>Warning: The Caps Lock key is on!</source>
+        <translation>Advarsel: Caps Lock er på!</translation>
+    </message>
+</context>
 <context>
     <name>BanTableModel</name>
     <message>
@@ -246,12 +318,24 @@
         <translation>Åpne &amp;URI...</translation>
     </message>
     <message>
+        <source>Click to disable network activity.</source>
+        <translation>Klikk for å deaktivere nettverksaktivitet</translation>
+    </message>
+    <message>
+        <source>Network activity disabled.</source>
+        <translation>Nettverksaktivitet deaktivert</translation>
+    </message>
+    <message>
+        <source>Click to enable network activity again.</source>
+        <translation>Klikk for å aktivere nettverksaktivitet igjen.</translation>
+    </message>
+    <message>
         <source>Reindexing blocks on disk...</source>
         <translation>Reindekserer blokker på harddisk...</translation>
     </message>
     <message>
-        <source>Send coins to a Litebitcoin address</source>
-        <translation>Send til en Litebitcoin-adresse</translation>
+        <source>Send coins to a Litecoin address</source>
+        <translation>Send til en Litecoin-adresse</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -274,8 +358,8 @@
         <translation>&amp;Verifiser melding...</translation>
     </message>
     <message>
-        <source>Litebitcoin</source>
-        <translation>Litebitcoin</translation>
+        <source>Litecoin</source>
+        <translation>Litecoin</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -302,12 +386,12 @@
         <translation>Krypter de private nøklene som tilhører lommeboken din</translation>
     </message>
     <message>
-        <source>Sign messages with your Litebitcoin addresses to prove you own them</source>
-        <translation>Signer en melding med Litebitcoin-adressene dine for å bevise at du eier dem</translation>
+        <source>Sign messages with your Litecoin addresses to prove you own them</source>
+        <translation>Signer en melding med Litecoin-adressene dine for å bevise at du eier dem</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Litebitcoin addresses</source>
-        <translation>Bekreft meldinger for å være sikker på at de ble signert av en angitt Litebitcoin-adresse</translation>
+        <source>Verify messages to ensure they were signed with specified Litecoin addresses</source>
+        <translation>Bekreft meldinger for å være sikker på at de ble signert av en angitt Litecoin-adresse</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -326,8 +410,8 @@
         <translation>Verktøylinje for faner</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and litebitcoin: URIs)</source>
-        <translation>Forespør betalinger (genererer QR-koder og litebitcoin: URIer)</translation>
+        <source>Request payments (generates QR codes and litecoin: URIs)</source>
+        <translation>Forespør betalinger (genererer QR-koder og litecoin: URIer)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -338,16 +422,24 @@
         <translation>Vis listen over bruke mottaksadresser og merkelapper</translation>
     </message>
     <message>
-        <source>Open a litebitcoin: URI or payment request</source>
-        <translation>Åpne en Litebitcoin: URI eller betalingsetterspørring</translation>
+        <source>Open a litecoin: URI or payment request</source>
+        <translation>Åpne en Litecoin: URI eller betalingsetterspørring</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
         <translation>&amp;Kommandolinjevalg</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Litebitcoin network</source>
-        <translation><numerusform>%n aktiv forbindelse til Litebitcoin-nettverket</numerusform><numerusform>%n aktive forbindelser til Litebitcoin-nettverket</numerusform></translation>
+        <source>%n active connection(s) to Litecoin network</source>
+        <translation><numerusform>%n aktiv forbindelse til Litecoin-nettverket</numerusform><numerusform>%n aktive forbindelser til Litecoin-nettverket</numerusform></translation>
+    </message>
+    <message>
+        <source>Indexing blocks on disk...</source>
+        <translation>Indekserer blokker på disk...</translation>
+    </message>
+    <message>
+        <source>Processing blocks on disk...</source>
+        <translation>Prosesserer blokker på disk...</translation>
     </message>
     <message numerus="yes">
         <source>Processed %n block(s) of transaction history.</source>
@@ -384,6 +476,10 @@
     <message>
         <source>%1 client</source>
         <translation>%1 klient</translation>
+    </message>
+    <message>
+        <source>Connecting to peers...</source>
+        <translation>Kobler til likemannsnettverket...</translation>
     </message>
     <message>
         <source>Catching up...</source>
@@ -435,7 +531,11 @@
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
         <translation>Lommeboken er &lt;b&gt;kryptert&lt;/b&gt; og for tiden &lt;b&gt;låst&lt;/b&gt;</translation>
     </message>
-    </context>
+    <message>
+        <source>A fatal error occurred. Litecoin can no longer continue safely and will quit.</source>
+        <translation>En fatal feil har inntruffet. Litecoin kan ikke lenger trygt fortsette, og må derfor avslutte.</translation>
+    </message>
+</context>
 <context>
     <name>CoinControlDialog</name>
     <message>
@@ -507,10 +607,58 @@
         <translation>Bekreftet</translation>
     </message>
     <message>
+        <source>Copy address</source>
+        <translation>Kopier adresse</translation>
+    </message>
+    <message>
+        <source>Copy amount</source>
+        <translation>Kopier beløp</translation>
+    </message>
+    <message>
+        <source>Copy transaction ID</source>
+        <translation>Kopier transaksjons-ID</translation>
+    </message>
+    <message>
+        <source>Copy quantity</source>
+        <translation>Kopier mengde</translation>
+    </message>
+    <message>
+        <source>Copy fee</source>
+        <translation>Kopier gebyr</translation>
+    </message>
+    <message>
+        <source>Copy change</source>
+        <translation>Kopier veksel</translation>
+    </message>
+    <message>
+        <source>(%1 locked)</source>
+        <translation>(%1 låst)</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ja</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>nei</translation>
+    </message>
+    <message>
+        <source>Can vary +/- %1 satoshi(s) per input.</source>
+        <translation>Kan variere +/- %1 satoshi(er) per input.</translation>
+    </message>
+    <message>
         <source>(no label)</source>
         <translation>(ingen merkelapp)</translation>
     </message>
-    </context>
+    <message>
+        <source>change from %1 (%2)</source>
+        <translation>veksel fra %1 (%2)</translation>
+    </message>
+    <message>
+        <source>(change)</source>
+        <translation>(veksel)</translation>
+    </message>
+</context>
 <context>
     <name>EditAddressDialog</name>
     <message>
@@ -533,7 +681,31 @@
         <source>&amp;Address</source>
         <translation>&amp;Adresse</translation>
     </message>
-    </context>
+    <message>
+        <source>New receiving address</source>
+        <translation>Ny mottaksadresse</translation>
+    </message>
+    <message>
+        <source>New sending address</source>
+        <translation>Ny utsendingsadresse</translation>
+    </message>
+    <message>
+        <source>Edit receiving address</source>
+        <translation>Rediger mottaksadresse</translation>
+    </message>
+    <message>
+        <source>Edit sending address</source>
+        <translation>Rediger utsendingsadresse</translation>
+    </message>
+    <message>
+        <source>Could not unlock wallet.</source>
+        <translation>Kunne ikke låse opp lommebok.</translation>
+    </message>
+    <message>
+        <source>New key generation failed.</source>
+        <translation>Generering av ny nøkkel feilet.</translation>
+    </message>
+</context>
 <context>
     <name>FreespaceChecker</name>
     <message>
@@ -607,7 +779,11 @@
         <source>Show splash screen on startup (default: %u)</source>
         <translation>Vis velkomstbilde ved oppstart (default: %u)</translation>
     </message>
-    </context>
+    <message>
+        <source>Reset all settings changed in the GUI</source>
+        <translation>Nullstill alle innstillinger endret i det grafiske brukergrensesnittet</translation>
+    </message>
+</context>
 <context>
     <name>Intro</name>
     <message>
@@ -650,8 +826,28 @@
         <translation>Skjema</translation>
     </message>
     <message>
+        <source>Unknown...</source>
+        <translation>Ukjent...</translation>
+    </message>
+    <message>
         <source>Last block time</source>
         <translation>Tidspunkt for siste blokk</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Fremgang</translation>
+    </message>
+    <message>
+        <source>Progress increase per hour</source>
+        <translation>Fremgangen stiger hver time</translation>
+    </message>
+    <message>
+        <source>calculating...</source>
+        <translation>kalkulerer...</translation>
+    </message>
+    <message>
+        <source>Estimated time left until synced</source>
+        <translation>Estimert gjenstående tid før ferdig synkronisert</translation>
     </message>
     <message>
         <source>Hide</source>
@@ -764,16 +960,16 @@
         <translation>&amp;Bruk ubekreftet veksel</translation>
     </message>
     <message>
-        <source>Automatically open the Litebitcoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Åpne automatisk Litebitcoin klientporten på ruteren. Dette virker kun om din ruter støtter UPnP og dette er påslått.</translation>
+        <source>Automatically open the Litecoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Åpne automatisk Litecoin klientporten på ruteren. Dette virker kun om din ruter støtter UPnP og dette er påslått.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
         <translation>Sett opp port ved hjelp av &amp;UPnP</translation>
     </message>
     <message>
-        <source>Connect to the Litebitcoin network through a SOCKS5 proxy.</source>
-        <translation>Koble til Litebitcoin-nettverket gjennom en SOCKS5 proxy.</translation>
+        <source>Connect to the Litecoin network through a SOCKS5 proxy.</source>
+        <translation>Koble til Litecoin-nettverket gjennom en SOCKS5 proxy.</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
@@ -812,8 +1008,8 @@
         <translation>Tor</translation>
     </message>
     <message>
-        <source>Connect to the Litebitcoin network through a separate SOCKS5 proxy for Tor hidden services.</source>
-        <translation>Koble til Litebitcoin-nettverket gjennom en separat SOCKS5 mellomtjener for Tor skjulte tjenester.</translation>
+        <source>Connect to the Litecoin network through a separate SOCKS5 proxy for Tor hidden services.</source>
+        <translation>Koble til Litecoin-nettverket gjennom en separat SOCKS5 mellomtjener for Tor skjulte tjenester.</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services:</source>
@@ -822,6 +1018,10 @@
     <message>
         <source>&amp;Window</source>
         <translation>&amp;Vindu</translation>
+    </message>
+    <message>
+        <source>&amp;Hide the icon from the system tray.</source>
+        <translation>&amp;Skjul ikonet fra oppgavelinjen.</translation>
     </message>
     <message>
         <source>Hide tray icon</source>
@@ -853,7 +1053,7 @@
     </message>
     <message>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
-        <translation>Velg standard delt enhet for visning i grensesnittet og for sending av litebitcoins.</translation>
+        <translation>Velg standard delt enhet for visning i grensesnittet og for sending av litecoins.</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
@@ -903,8 +1103,8 @@
         <translation>Skjema</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Litebitcoin network after a connection is established, but this process has not completed yet.</source>
-        <translation>Informasjonen som vises kan være foreldet. Din lommebok synkroniseres automatisk med Litebitcoin-nettverket etter at tilkobling er opprettet, men denne prosessen er ikke ferdig enda.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Litecoin network after a connection is established, but this process has not completed yet.</source>
+        <translation>Informasjonen som vises kan være foreldet. Din lommebok synkroniseres automatisk med Litecoin-nettverket etter at tilkobling er opprettet, men denne prosessen er ikke ferdig enda.</translation>
     </message>
     <message>
         <source>Watch-only:</source>
@@ -992,8 +1192,8 @@
         <translation>Beløp</translation>
     </message>
     <message>
-        <source>Enter a Litebitcoin address (e.g. %1)</source>
-        <translation>Oppgi en Litebitcoin-adresse (f.eks. %1)</translation>
+        <source>Enter a Litecoin address (e.g. %1)</source>
+        <translation>Oppgi en Litecoin-adresse (f.eks. %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -1023,17 +1223,61 @@
         <source>%1 ms</source>
         <translation>%1 ms</translation>
     </message>
+    <message numerus="yes">
+        <source>%n second(s)</source>
+        <translation><numerusform>%n sekund</numerusform><numerusform>%n sekunder</numerusform></translation>
+    </message>
+    <message numerus="yes">
+        <source>%n minute(s)</source>
+        <translation><numerusform>%n minutt</numerusform><numerusform>%n minutter</numerusform></translation>
+    </message>
+    <message numerus="yes">
+        <source>%n hour(s)</source>
+        <translation><numerusform>%n time</numerusform><numerusform>%n timer</numerusform></translation>
+    </message>
+    <message numerus="yes">
+        <source>%n day(s)</source>
+        <translation><numerusform>%n dag</numerusform><numerusform>%n dager</numerusform></translation>
+    </message>
+    <message numerus="yes">
+        <source>%n week(s)</source>
+        <translation><numerusform>%n uke</numerusform><numerusform>%n uker</numerusform></translation>
+    </message>
     <message>
         <source>%1 and %2</source>
         <translation>%1 og %2</translation>
     </message>
+    <message numerus="yes">
+        <source>%n year(s)</source>
+        <translation><numerusform>%n år</numerusform><numerusform>%n år</numerusform></translation>
+    </message>
     </context>
 <context>
     <name>QObject::QObject</name>
-    </context>
+    <message>
+        <source>Error: %1</source>
+        <translation>Feil: %1</translation>
+    </message>
+</context>
 <context>
     <name>QRImageWidget</name>
-    </context>
+    <message>
+        <source>&amp;Save Image...</source>
+        <translation>&amp;Lagre bilde...</translation>
+    </message>
+    <message>
+        <source>&amp;Copy Image</source>
+        <translation>&amp;Kopier bilde</translation>
+    </message>
+    <message>
+        <source>Save QR Code</source>
+        <translation>Lagre QR-kode</translation>
+    </message>
+    <message>
+        <source>PNG Image (*.png)</source>
+        <translation>PNG-bilde (*.png)</translation>
+    </message>
+</context>
 <context>
     <name>RPCConsole</name>
     <message>
@@ -1324,8 +1568,8 @@
         <translation>Gj&amp;enbruk en eksisterende mottaksadresse (ikke anbefalt)</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Litebitcoin network.</source>
-        <translation>En valgfri melding å tilknytte betalingsetterspørringen, som vil bli vist når forespørselen er åpnet. Meldingen vil ikke bli sendt med betalingen over Litebitcoin-nettverket.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Litecoin network.</source>
+        <translation>En valgfri melding å tilknytte betalingsetterspørringen, som vil bli vist når forespørselen er åpnet. Meldingen vil ikke bli sendt med betalingen over Litecoin-nettverket.</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -1371,7 +1615,11 @@
         <source>Remove</source>
         <translation>Fjern</translation>
     </message>
-    </context>
+    <message>
+        <source>Copy amount</source>
+        <translation>Kopier beløp</translation>
+    </message>
+</context>
 <context>
     <name>ReceiveRequestDialog</name>
     <message>
@@ -1398,12 +1646,24 @@
         <source>Label</source>
         <translation>Merkelapp</translation>
     </message>
+    <message>
+        <source>Message</source>
+        <translation>Melding</translation>
+    </message>
     </context>
 <context>
     <name>RecentRequestsTableModel</name>
     <message>
+        <source>Date</source>
+        <translation>Dato</translation>
+    </message>
+    <message>
         <source>Label</source>
         <translation>Merkelapp</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Melding</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -1414,7 +1674,7 @@
     <name>SendCoinsDialog</name>
     <message>
         <source>Send Coins</source>
-        <translation>Send Litebitcoins</translation>
+        <translation>Send Litecoins</translation>
     </message>
     <message>
         <source>Coin Control Features</source>
@@ -1493,8 +1753,8 @@
         <translation>minstebeløp</translation>
     </message>
     <message>
-        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks. But be aware that this can end up in a never confirming transaction once there is more demand for litebitcoin transactions than the network can process.</source>
-        <translation>Betaling av bare minimumsavgiften går helt fint så lenge det er mindre transaksjonsvolum enn plass i blokkene. Men vær klar over at dette kan ende opp i en transaksjon som aldri blir bekreftet når det er mer etterspørsel etter Litebitcoin-transaksjoner enn nettverket kan behandle.</translation>
+        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks. But be aware that this can end up in a never confirming transaction once there is more demand for litecoin transactions than the network can process.</source>
+        <translation>Betaling av bare minimumsavgiften går helt fint så lenge det er mindre transaksjonsvolum enn plass i blokkene. Men vær klar over at dette kan ende opp i en transaksjon som aldri blir bekreftet når det er mer etterspørsel etter Litecoin-transaksjoner enn nettverket kan behandle.</translation>
     </message>
     <message>
         <source>(read the tooltip)</source>
@@ -1553,6 +1813,26 @@
         <translation>S&amp;end</translation>
     </message>
     <message>
+        <source>Copy quantity</source>
+        <translation>Kopier mengde</translation>
+    </message>
+    <message>
+        <source>Copy amount</source>
+        <translation>Kopier beløp</translation>
+    </message>
+    <message>
+        <source>Copy fee</source>
+        <translation>Kopier gebyr</translation>
+    </message>
+    <message>
+        <source>Copy change</source>
+        <translation>Kopier veksel</translation>
+    </message>
+    <message>
+        <source>or</source>
+        <translation>eller</translation>
+    </message>
+    <message>
         <source>(no label)</source>
         <translation>(ingen merkelapp)</translation>
     </message>
@@ -1580,8 +1860,8 @@
         <translation>Dette er en normal betaling.</translation>
     </message>
     <message>
-        <source>The Litebitcoin address to send the payment to</source>
-        <translation>Litebitcoin-adressen betalingen skal sendes til</translation>
+        <source>The Litecoin address to send the payment to</source>
+        <translation>Litecoin-adressen betalingen skal sendes til</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -1600,8 +1880,8 @@
         <translation>Fjern denne oppføringen</translation>
     </message>
     <message>
-        <source>The fee will be deducted from the amount being sent. The recipient will receive less litebitcoins than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
-        <translation>Gebyret vil bli trukket fra beløpet som blir sendt. Mottakeren vil motta mindre litebitcoins enn det du skriver inn i beløpsfeltet. Hvis det er valgt flere mottakere, deles gebyret likt.</translation>
+        <source>The fee will be deducted from the amount being sent. The recipient will receive less litecoins than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
+        <translation>Gebyret vil bli trukket fra beløpet som blir sendt. Mottakeren vil motta mindre litecoins enn det du skriver inn i beløpsfeltet. Hvis det er valgt flere mottakere, deles gebyret likt.</translation>
     </message>
     <message>
         <source>S&amp;ubtract fee from amount</source>
@@ -1624,8 +1904,8 @@
         <translation>Skriv inn en merkelapp for denne adressen for å legge den til listen av brukte adresser</translation>
     </message>
     <message>
-        <source>A message that was attached to the litebitcoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Litebitcoin network.</source>
-        <translation>En melding som var tilknyttet litebitcoinen: URI vil bli lagret med transaksjonen for din oversikt. Denne meldingen vil ikke bli sendt over Litebitcoin-nettverket.</translation>
+        <source>A message that was attached to the litecoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Litecoin network.</source>
+        <translation>En melding som var tilknyttet litecoinen: URI vil bli lagret med transaksjonen for din oversikt. Denne meldingen vil ikke bli sendt over Litecoin-nettverket.</translation>
     </message>
     <message>
         <source>Pay To:</source>
@@ -1638,9 +1918,17 @@
     </context>
 <context>
     <name>SendConfirmationDialog</name>
-    </context>
+    <message>
+        <source>Yes</source>
+        <translation>Ja</translation>
+    </message>
+</context>
 <context>
     <name>ShutdownWindow</name>
+    <message>
+        <source>%1 is shutting down...</source>
+        <translation>%1 lukker...</translation>
+    </message>
     <message>
         <source>Do not shut down the computer until this window disappears.</source>
         <translation>Slå ikke av datamaskinen før dette vinduet forsvinner.</translation>
@@ -1657,12 +1945,12 @@
         <translation>&amp;Signer Melding</translation>
     </message>
     <message>
-        <source>You can sign messages/agreements with your addresses to prove you can receive litebitcoins sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
-        <translation>Du kan signere meldinger/avtaler med adresser for å bevise at du kan motta litebitcoins sendt til dem. Vær forsiktig med å signere noe vagt eller tilfeldig, siden phishing-angrep kan prøve å lure deg til å signere din identitet over til dem. Bare signer fullt detaljerte utsagn som du er enig i.</translation>
+        <source>You can sign messages/agreements with your addresses to prove you can receive litecoins sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
+        <translation>Du kan signere meldinger/avtaler med adresser for å bevise at du kan motta litecoins sendt til dem. Vær forsiktig med å signere noe vagt eller tilfeldig, siden phishing-angrep kan prøve å lure deg til å signere din identitet over til dem. Bare signer fullt detaljerte utsagn som du er enig i.</translation>
     </message>
     <message>
-        <source>The Litebitcoin address to sign the message with</source>
-        <translation>Litebitcoin-adressen meldingen skal signeres med</translation>
+        <source>The Litecoin address to sign the message with</source>
+        <translation>Litecoin-adressen meldingen skal signeres med</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -1693,8 +1981,8 @@
         <translation>Kopier valgt signatur til utklippstavle</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Litebitcoin address</source>
-        <translation>Signer meldingen for å bevise at du eier denne Litebitcoin-adressen</translation>
+        <source>Sign the message to prove you own this Litecoin address</source>
+        <translation>Signer meldingen for å bevise at du eier denne Litecoin-adressen</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -1717,12 +2005,12 @@
         <translation>Skriv inn mottakerens adresse, melding (forsikre deg om at du kopier linjeskift, mellomrom, faner osv. nøyaktig) og underskrift nedenfor for å bekrefte meldingen. Vær forsiktig så du ikke leser mer ut av signaturen enn hva som er i den signerte meldingen i seg selv, for å unngå å bli lurt av et man-in-the-middle-angrep. Merk at dette bare beviser at den som signerer kan motta med adressen, dette beviser ikke hvem som har sendt transaksjoner!</translation>
     </message>
     <message>
-        <source>The Litebitcoin address the message was signed with</source>
-        <translation>Litebitcoin-adressen meldingen ble signert med</translation>
+        <source>The Litecoin address the message was signed with</source>
+        <translation>Litecoin-adressen meldingen ble signert med</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Litebitcoin address</source>
-        <translation>Verifiser meldingen for å være sikker på at den ble signert av den angitte Litebitcoin-adressen</translation>
+        <source>Verify the message to ensure it was signed with the specified Litecoin address</source>
+        <translation>Verifiser meldingen for å være sikker på at den ble signert av den angitte Litecoin-adressen</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
@@ -1731,6 +2019,14 @@
     <message>
         <source>Reset all verify message fields</source>
         <translation>Tilbakestill alle felter for meldingsverifikasjon</translation>
+    </message>
+    <message>
+        <source>Message signing failed.</source>
+        <translation>Signering av melding feilet.</translation>
+    </message>
+    <message>
+        <source>Message signed.</source>
+        <translation>Melding signert.</translation>
     </message>
     </context>
 <context>
@@ -1749,6 +2045,38 @@
 </context>
 <context>
     <name>TransactionDesc</name>
+    <message>
+        <source>Date</source>
+        <translation>Dato</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Fra</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>ukjent</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Til</translation>
+    </message>
+    <message>
+        <source>not accepted</source>
+        <translation>ikke akseptert</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Melding</translation>
+    </message>
+    <message>
+        <source>Comment</source>
+        <translation>Kommentar</translation>
+    </message>
+    <message>
+        <source>Transaction ID</source>
+        <translation>Transaksjons-ID</translation>
+    </message>
     </context>
 <context>
     <name>TransactionDescDialog</name>
@@ -1760,8 +2088,24 @@
 <context>
     <name>TransactionTableModel</name>
     <message>
+        <source>Date</source>
+        <translation>Dato</translation>
+    </message>
+    <message>
         <source>Label</source>
         <translation>Merkelapp</translation>
+    </message>
+    <message>
+        <source>Offline</source>
+        <translation>Frakoblet</translation>
+    </message>
+    <message>
+        <source>Unconfirmed</source>
+        <translation>Ubekreftet</translation>
+    </message>
+    <message>
+        <source>Sent to</source>
+        <translation>Sendt til</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -1771,8 +2115,56 @@
 <context>
     <name>TransactionView</name>
     <message>
+        <source>All</source>
+        <translation>Alt</translation>
+    </message>
+    <message>
+        <source>Today</source>
+        <translation>I dag</translation>
+    </message>
+    <message>
+        <source>This week</source>
+        <translation>Denne uka</translation>
+    </message>
+    <message>
+        <source>This month</source>
+        <translation>Denne måneden</translation>
+    </message>
+    <message>
+        <source>Last month</source>
+        <translation>Forrige måned</translation>
+    </message>
+    <message>
+        <source>This year</source>
+        <translation>Dette året</translation>
+    </message>
+    <message>
+        <source>Sent to</source>
+        <translation>Sendt til</translation>
+    </message>
+    <message>
+        <source>To yourself</source>
+        <translation>Til deg selv</translation>
+    </message>
+    <message>
+        <source>Copy address</source>
+        <translation>Kopier adresse</translation>
+    </message>
+    <message>
+        <source>Copy amount</source>
+        <translation>Kopier beløp</translation>
+    </message>
+    <message>
+        <source>Copy transaction ID</source>
+        <translation>Kopier transaksjons-ID</translation>
+    </message>
+    <message>
         <source>Comma separated file (*.csv)</source>
         <translation>Kommaseparert fil (*.csv)</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Dato</translation>
     </message>
     <message>
         <source>Label</source>
@@ -1862,8 +2254,8 @@
         <translation>Kunne ikke starte HTTP server. Se debug logg for detaljer.</translation>
     </message>
     <message>
-        <source>Litebitcoin Core</source>
-        <translation>Litebitcoin Core</translation>
+        <source>Litecoin Core</source>
+        <translation>Litecoin Core</translation>
     </message>
     <message>
         <source>Bind to given address and always listen on it. Use [host]:port notation for IPv6</source>

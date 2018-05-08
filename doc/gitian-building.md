@@ -1,9 +1,9 @@
 Gitian building
 ================
 
-*Setup instructions for a Gitian build of Litebitcoin Core using a Debian VM or physical system.*
+*Setup instructions for a Gitian build of Litecoin Core using a Debian VM or physical system.*
 
-Gitian is the deterministic build process that is used to build the Litebitcoin
+Gitian is the deterministic build process that is used to build the Litecoin
 Core executables. It provides a way to be reasonably sure that the
 executables are really built from the source on GitHub. It also makes sure that
 the same, tested dependencies are used and statically built into the executable.
@@ -11,7 +11,7 @@ the same, tested dependencies are used and statically built into the executable.
 Multiple developers build the source code by following a specific descriptor
 ("recipe"), cryptographically sign the result, and upload the resulting signature.
 These results are compared and only if they match, the build is accepted and uploaded
-to litebitcoin.org.
+to litecoin.org.
 
 More independent Gitian builders are needed, which is why this guide exists.
 It is preferred you follow these steps yourself instead of using someone else's
@@ -26,7 +26,7 @@ Table of Contents
 - [Installing Gitian](#installing-gitian)
 - [Setting up the Gitian image](#setting-up-the-gitian-image)
 - [Getting and building the inputs](#getting-and-building-the-inputs)
-- [Building Litebitcoin Core](#building-litebitcoin-core)
+- [Building Litecoin Core](#building-litecoin-core)
 - [Building an alternative repository](#building-an-alternative-repository)
 - [Signing externally](#signing-externally)
 - [Uploading signatures](#uploading-signatures)
@@ -76,7 +76,11 @@ In the VirtualBox GUI click "New" and choose the following parameters in the wiz
 
 After creating the VM, we need to configure it.
 
-- Click the `Settings` button, then go to the `Network` tab. Adapter 1 should be attached to `NAT`.
+- Click the `Settings` button, then go to `System` tab and `Processor` sub-tab. Increase the number of processors to the number of cores on your machine if you want builds to be faster.
+
+![](gitian-building/system_settings.png)
+
+- Go to the `Network` tab. Adapter 1 should be attached to `NAT`.
 
 ![](gitian-building/network_settings.png)
 
@@ -131,6 +135,7 @@ To select a different button, press `Tab`.
   - Leave domain name empty.
 
 ![](gitian-building/debian_install_5_configure_the_network.png)
+![](gitian-building/debian_install_6_domain_name.png)
 
 - Choose a root password and enter it twice (remember it for later)
 
@@ -305,12 +310,12 @@ cd ..
 
 **Note**: When sudo asks for a password, enter the password for the user *debian* not for *root*.
 
-Clone the git repositories for litebitcoin and Gitian.
+Clone the git repositories for litecoin and Gitian.
 
 ```bash
 git clone https://github.com/devrandom/gitian-builder.git
-git clone https://github.com/litebitcoins/litebitcoin
-git clone https://github.com/litebitcoins/gitian.sigs.lbtc.git
+git clone https://github.com/litecoin-project/litecoin
+git clone https://github.com/litecoin-project/gitian.sigs.ltc.git
 ```
 
 Setting up the Gitian image
@@ -336,19 +341,19 @@ There will be a lot of warnings printed during the build of the image. These can
 Getting and building the inputs
 --------------------------------
 
-At this point you have two options, you can either use the automated script (found in [contrib/gitian-build.sh](/contrib/gitian-build.sh)) or you could manually do everything by following this guide. If you're using the automated script, then run it with the "--setup" command. Afterwards, run it with the "--build" command (example: "contrib/gitian-building.sh -b signer 0.13.0"). Otherwise ignore this.
+At this point you have two options, you can either use the automated script (found in [contrib/gitian-build.sh](/contrib/gitian-build.sh)) or you could manually do everything by following this guide. If you're using the automated script, then run it with the "--setup" command. Afterwards, run it with the "--build" command (example: "contrib/gitian-build.sh -b signer 0.13.0"). Otherwise ignore this.
 
 Follow the instructions in [doc/release-process.md](release-process.md#fetch-and-create-inputs-first-time-or-when-dependency-versions-change)
-in the litebitcoin repository under 'Fetch and create inputs' to install sources which require
+in the litecoin repository under 'Fetch and create inputs' to install sources which require
 manual intervention. Also optionally follow the next step: 'Seed the Gitian sources cache
 and offline git repositories' which will fetch the remaining files required for building
 offline.
 
-Building Litebitcoin Core
+Building Litecoin Core
 ----------------
 
-To build Litebitcoin Core (for Linux, OS X and Windows) just follow the steps under 'perform
-Gitian builds' in [doc/release-process.md](release-process.md#perform-gitian-builds) in the litebitcoin repository.
+To build Litecoin Core (for Linux, OS X and Windows) just follow the steps under 'perform
+Gitian builds' in [doc/release-process.md](release-process.md#perform-gitian-builds) in the litecoin repository.
 
 This may take some time as it will build all the dependencies needed for each descriptor.
 These dependencies will be cached after a successful build to avoid rebuilding them when possible.
@@ -362,12 +367,12 @@ tail -f var/build.log
 
 Output from `gbuild` will look something like
 
-    Initialized empty Git repository in /home/debian/gitian-builder/inputs/litebitcoin/.git/
+    Initialized empty Git repository in /home/debian/gitian-builder/inputs/litecoin/.git/
     remote: Counting objects: 57959, done.
     remote: Total 57959 (delta 0), reused 0 (delta 0), pack-reused 57958
     Receiving objects: 100% (57959/57959), 53.76 MiB | 484.00 KiB/s, done.
     Resolving deltas: 100% (41590/41590), done.
-    From https://github.com/litebitcoins/litebitcoin
+    From https://github.com/litecoin-project/litecoin
     ... (new tags, new branch etc)
     --- Building for trusty amd64 ---
     Stopping target if it is up
@@ -393,18 +398,18 @@ and inputs.
 
 For example:
 ```bash
-URL=https://github.com/thrasher-/litebitcoin.git
+URL=https://github.com/thrasher-/litecoin.git
 COMMIT=2014_03_windows_unicode_path
-./bin/gbuild --commit litebitcoin=${COMMIT} --url litebitcoin=${URL} ../litebitcoin/contrib/gitian-descriptors/gitian-linux.yml
-./bin/gbuild --commit litebitcoin=${COMMIT} --url litebitcoin=${URL} ../litebitcoin/contrib/gitian-descriptors/gitian-win.yml
-./bin/gbuild --commit litebitcoin=${COMMIT} --url litebitcoin=${URL} ../litebitcoin/contrib/gitian-descriptors/gitian-osx.yml
+./bin/gbuild --commit litecoin=${COMMIT} --url litecoin=${URL} ../litecoin/contrib/gitian-descriptors/gitian-linux.yml
+./bin/gbuild --commit litecoin=${COMMIT} --url litecoin=${URL} ../litecoin/contrib/gitian-descriptors/gitian-win.yml
+./bin/gbuild --commit litecoin=${COMMIT} --url litecoin=${URL} ../litecoin/contrib/gitian-descriptors/gitian-osx.yml
 ```
 
 Building fully offline
 -----------------------
 
 For building fully offline including attaching signatures to unsigned builds, the detached-sigs repository
-and the litebitcoin git repository with the desired tag must both be available locally, and then gbuild must be
+and the litecoin git repository with the desired tag must both be available locally, and then gbuild must be
 told where to find them. It also requires an apt-cacher-ng which is fully-populated but set to offline mode, or
 manually disabling gitian-builder's use of apt-get to update the VM build environment.
 
@@ -423,7 +428,7 @@ cd /path/to/gitian-builder
 LXC_ARCH=amd64 LXC_SUITE=trusty on-target -u root apt-get update
 LXC_ARCH=amd64 LXC_SUITE=trusty on-target -u root \
   -e DEBIAN_FRONTEND=noninteractive apt-get --no-install-recommends -y install \
-  $( sed -ne '/^packages:/,/[^-] .*/ {/^- .*/{s/"//g;s/- //;p}}' ../litebitcoin/contrib/gitian-descriptors/*|sort|uniq )
+  $( sed -ne '/^packages:/,/[^-] .*/ {/^- .*/{s/"//g;s/- //;p}}' ../litecoin/contrib/gitian-descriptors/*|sort|uniq )
 LXC_ARCH=amd64 LXC_SUITE=trusty on-target -u root apt-get -q -y purge grub
 LXC_ARCH=amd64 LXC_SUITE=trusty on-target -u root -e DEBIAN_FRONTEND=noninteractive apt-get -y dist-upgrade
 ```
@@ -443,12 +448,12 @@ Then when building, override the remote URLs that gbuild would otherwise pull fr
 ```bash
 
 cd /some/root/path/
-git clone https://github.com/litebitcoins/litebitcoin-detached-sigs.git
+git clone https://github.com/litecoin-project/litecoin-detached-sigs.git
 
-BTCPATH=/some/root/path/litebitcoin
-SIGPATH=/some/root/path/litebitcoin-detached-sigs
+BTCPATH=/some/root/path/litecoin
+SIGPATH=/some/root/path/litecoin-detached-sigs
 
-./bin/gbuild --url litebitcoin=${BTCPATH},signature=${SIGPATH} ../litebitcoin/contrib/gitian-descriptors/gitian-win-signer.yml
+./bin/gbuild --url litecoin=${BTCPATH},signature=${SIGPATH} ../litecoin/contrib/gitian-descriptors/gitian-win-signer.yml
 ```
 
 Signing externally
@@ -463,9 +468,9 @@ When you execute `gsign` you will get an error from GPG, which can be ignored. C
 in `gitian.sigs` to your signing machine and do
 
 ```bash
-    gpg --detach-sign ${VERSION}-linux/${SIGNER}/litebitcoin-linux-build.assert
-    gpg --detach-sign ${VERSION}-win/${SIGNER}/litebitcoin-win-build.assert
-    gpg --detach-sign ${VERSION}-osx-unsigned/${SIGNER}/litebitcoin-osx-build.assert
+    gpg --detach-sign ${VERSION}-linux/${SIGNER}/litecoin-linux-build.assert
+    gpg --detach-sign ${VERSION}-win/${SIGNER}/litecoin-win-build.assert
+    gpg --detach-sign ${VERSION}-osx-unsigned/${SIGNER}/litecoin-osx-build.assert
 ```
 
 This will create the `.sig` files that can be committed together with the `.assert` files to assert your
@@ -475,5 +480,5 @@ Uploading signatures
 ---------------------
 
 After building and signing you can push your signatures (both the `.assert` and `.assert.sig` files) to the
-[litebitcoins/gitian.sigs.lbtc](https://github.com/litebitcoins/gitian.sigs.lbtc/) repository, or if that's not possible create a pull
+[litecoin-project/gitian.sigs.ltc](https://github.com/litecoin-project/gitian.sigs.ltc/) repository, or if that's not possible create a pull
 request. You can also mail the files to thrasher (thrasher@addictionsofware.com) and he will commit them.

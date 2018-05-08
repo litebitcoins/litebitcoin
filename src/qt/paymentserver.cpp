@@ -47,14 +47,14 @@
 #endif
 
 const int BITCOIN_IPC_CONNECT_TIMEOUT = 1000; // milliseconds
-const QString BITCOIN_IPC_PREFIX("litebitcoin:");
+const QString BITCOIN_IPC_PREFIX("litecoin:");
 // BIP70 payment protocol messages
 const char* BIP70_MESSAGE_PAYMENTACK = "PaymentACK";
 const char* BIP70_MESSAGE_PAYMENTREQUEST = "PaymentRequest";
 // BIP71 payment protocol media types
-const char* BIP71_MIMETYPE_PAYMENT = "application/litebitcoin-payment";
-const char* BIP71_MIMETYPE_PAYMENTACK = "application/litebitcoin-paymentack";
-const char* BIP71_MIMETYPE_PAYMENTREQUEST = "application/litebitcoin-paymentrequest";
+const char* BIP71_MIMETYPE_PAYMENT = "application/litecoin-payment";
+const char* BIP71_MIMETYPE_PAYMENTACK = "application/litecoin-paymentack";
+const char* BIP71_MIMETYPE_PAYMENTREQUEST = "application/litecoin-paymentrequest";
 
 struct X509StoreDeleter {
       void operator()(X509_STORE* b) {
@@ -78,7 +78,7 @@ namespace // Anon namespace
 //
 static QString ipcServerName()
 {
-    QString name("LitebitcoinQt");
+    QString name("LitecoinQt");
 
     // Append a simple hash of the datadir
     // Note that GetDataDir(true) returns a different path
@@ -122,7 +122,7 @@ void PaymentServer::LoadRootCAs(X509_STORE* _store)
 
     // Note: use "-system-" default here so that users can pass -rootcertificates=""
     // and get 'I don't like X.509 certificates, don't trust anybody' behavior:
-    QString certFile = QString::fromStdString(GetArg("-rootcertificates", "-system-"));
+    QString certFile = QString::fromStdString(gArgs.GetArg("-rootcertificates", "-system-"));
 
     // Empty store
     if (certFile.isEmpty()) {
@@ -144,7 +144,7 @@ void PaymentServer::LoadRootCAs(X509_STORE* _store)
     int nRootCerts = 0;
     const QDateTime currentTime = QDateTime::currentDateTime();
 
-    Q_FOREACH (const QSslCertificate& cert, certList) {
+    for (const QSslCertificate& cert : certList) {
         // Don't log NULL certificates
         if (cert.isNull())
             continue;
@@ -219,14 +219,16 @@ void PaymentServer::ipcParseCommandLine(int argc, char* argv[])
             if (GUIUtil::parseBitcoinURI(arg, &r) && !r.address.isEmpty())
             {
                 CBitcoinAddress address(r.address.toStdString());
+                auto tempChainParams = CreateChainParams(CBaseChainParams::MAIN);
 
-                if (address.IsValid(Params(CBaseChainParams::MAIN)))
+                if (address.IsValid(*tempChainParams))
                 {
                     SelectParams(CBaseChainParams::MAIN);
                 }
-                else if (address.IsValid(Params(CBaseChainParams::TESTNET)))
-                {
-                    SelectParams(CBaseChainParams::TESTNET);
+                else {
+                    tempChainParams = CreateChainParams(CBaseChainParams::TESTNET);
+                    if (address.IsValid(*tempChainParams))
+                        SelectParams(CBaseChainParams::TESTNET);
                 }
             }
         }
@@ -265,14 +267,14 @@ void PaymentServer::ipcParseCommandLine(int argc, char* argv[])
 bool PaymentServer::ipcSendCommandLine()
 {
     bool fResult = false;
-    Q_FOREACH (const QString& r, savedPaymentRequests)
+    for (const QString& r : savedPaymentRequests)
     {
         QLocalSocket* socket = new QLocalSocket();
         socket->connectToServer(ipcServerName(), QIODevice::WriteOnly);
         if (!socket->waitForConnected(BITCOIN_IPC_CONNECT_TIMEOUT))
         {
             delete socket;
-            socket = NULL;
+            socket = nullptr;
             return false;
         }
 
@@ -288,7 +290,7 @@ bool PaymentServer::ipcSendCommandLine()
         socket->disconnectFromServer();
 
         delete socket;
-        socket = NULL;
+        socket = nullptr;
         fResult = true;
     }
 
@@ -324,7 +326,7 @@ PaymentServer::PaymentServer(QObject* parent, bool startLocalServer) :
         if (!uriServer->listen(name)) {
             // constructor is called early in init, so don't use "Q_EMIT message()" here
             QMessageBox::critical(0, tr("Payment request error"),
-                tr("Cannot start litebitcoin: click-to-pay handler"));
+                tr("Cannot start litecoin: click-to-pay handler"));
         }
         else {
             connect(uriServer, SIGNAL(newConnection()), this, SLOT(handleURIConnection()));
@@ -362,7 +364,7 @@ void PaymentServer::initNetManager()
 {
     if (!optionsModel)
         return;
-    if (netManager != NULL)
+    if (netManager != nullptr)
         delete netManager;
 
     // netManager is used to fetch paymentrequests given in bitcoin: URIs
@@ -390,7 +392,7 @@ void PaymentServer::uiReady()
     initNetManager();
 
     saveURIs = false;
-    Q_FOREACH (const QString& s, savedPaymentRequests)
+    for (const QString& s : savedPaymentRequests)
     {
         handleURIOrFile(s);
     }
@@ -449,7 +451,7 @@ void PaymentServer::handleURIOrFile(const QString& s)
             }
             else
                 Q_EMIT message(tr("URI handling"),
-                    tr("URI cannot be parsed! This can be caused by an invalid Litebitcoin address or malformed URI parameters."),
+                    tr("URI cannot be parsed! This can be caused by an invalid Litecoin address or malformed URI parameters."),
                     CClientUIInterface::ICON_WARNING);
 
             return;
@@ -553,7 +555,7 @@ bool PaymentServer::processPaymentRequest(const PaymentRequestPlus& request, Sen
     QList<std::pair<CScript, CAmount> > sendingTos = request.getPayTo();
     QStringList addresses;
 
-    Q_FOREACH(const PAIRTYPE(CScript, CAmount)& sendingTo, sendingTos) {
+    for (const std::pair<CScript, CAmount>& sendingTo : sendingTos) {
         // Extract and check destination addresses
         CTxDestination dest;
         if (ExtractDestination(sendingTo.first, dest)) {
@@ -580,7 +582,7 @@ bool PaymentServer::processPaymentRequest(const PaymentRequestPlus& request, Sen
 
         // Extract and check amounts
         CTxOut txOut(sendingTo.second, sendingTo.first);
-        if (txOut.IsDust(dustRelayFee)) {
+        if (IsDust(txOut, ::dustRelayFee)) {
             Q_EMIT message(tr("Payment request error"), tr("Requested payment amount of %1 is too small (considered dust).")
                 .arg(BitcoinUnits::formatWithUnit(optionsModel->getDisplayUnit(), sendingTo.second)),
                 CClientUIInterface::MSG_ERROR);
@@ -740,7 +742,7 @@ void PaymentServer::reportSslErrors(QNetworkReply* reply, const QList<QSslError>
     Q_UNUSED(reply);
 
     QString errString;
-    Q_FOREACH (const QSslError& err, errs) {
+    for (const QSslError& err : errs) {
         qWarning() << "PaymentServer::reportSslErrors: " << err;
         errString += err.errorString() + "\n";
     }

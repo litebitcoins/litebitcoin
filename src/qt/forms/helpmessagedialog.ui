@@ -10,36 +10,6 @@
     <height>400</height>
    </rect>
   </property>
-  <property name="styleSheet">
-   <string notr="true">QDialog {
-background-image: url(:/images/ltbcbg); 
-}
-QPushButton { /* Global Button Style */
-background-color:qlineargradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0.494318 rgba(0, 0, 0, 118));
-border:0;
-border-radius:3px;
-color:#ffffff;
-font-size:12px;
-font-weight:bold;
-padding-left:25px;
-padding-right:25px;
-padding-top:5px;
-padding-bottom:5px;
-}
-
-QPushButton:hover {
-background-color:qlineargradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0.494318 rgba(0, 0, 0, 171));
-}
-
-QPushButton:focus {
-border:none;
-outline:none;
-}
-
-QPushButton:pressed {
-border:1px solid #FFFFFF;
-}</string>
-  </property>
   <layout class="QHBoxLayout" name="horizontalLayout_2">
    <property name="spacing">
     <number>0</number>
@@ -125,14 +95,6 @@ border:1px solid #FFFFFF;
         <bool>true</bool>
        </property>
        <widget class="QWidget" name="scrollAreaWidgetContents">
-        <property name="geometry">
-         <rect>
-          <x>0</x>
-          <y>0</y>
-          <width>635</width>
-          <height>136</height>
-         </rect>
-        </property>
         <layout class="QVBoxLayout" name="verticalLayout_2">
          <item>
           <widget class="QLabel" name="aboutMessage">

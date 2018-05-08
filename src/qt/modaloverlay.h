@@ -7,7 +7,6 @@
 
 #include <QDateTime>
 #include <QWidget>
-#include <QImage>
 
 //! The required delta of headers to the estimated number of available headers until we show the IBD progress
 static constexpr int HEADER_HEIGHT_DELTA_SYNC = 24;

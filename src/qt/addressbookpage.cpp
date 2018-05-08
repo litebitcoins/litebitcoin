@@ -36,10 +36,10 @@ AddressBookPage::AddressBookPage(const PlatformStyle *platformStyle, Mode _mode,
         ui->deleteAddress->setIcon(QIcon());
         ui->exportButton->setIcon(QIcon());
     } else {
-        ui->newAddress->setIcon(QIcon(":/icons/add"));
-        ui->copyAddress->setIcon(QIcon(":/icons/editcopy"));
-        ui->deleteAddress->setIcon(QIcon(":/icons/remove"));
-        ui->exportButton->setIcon(QIcon(":/icons/export"));
+        ui->newAddress->setIcon(platformStyle->SingleColorIcon(":/icons/add"));
+        ui->copyAddress->setIcon(platformStyle->SingleColorIcon(":/icons/editcopy"));
+        ui->deleteAddress->setIcon(platformStyle->SingleColorIcon(":/icons/remove"));
+        ui->exportButton->setIcon(platformStyle->SingleColorIcon(":/icons/export"));
     }
 
     switch(mode)
@@ -67,11 +67,11 @@ AddressBookPage::AddressBookPage(const PlatformStyle *platformStyle, Mode _mode,
     switch(tab)
     {
     case SendingTab:
-        ui->labelExplanation->setText(tr("These are your Litebitcoin addresses for sending payments. Always check the amount and the receiving address before sending coins."));
+        ui->labelExplanation->setText(tr("These are your Litecoin addresses for sending payments. Always check the amount and the receiving address before sending coins."));
         ui->deleteAddress->setVisible(true);
         break;
     case ReceivingTab:
-        ui->labelExplanation->setText(tr("These are your Litebitcoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction."));
+        ui->labelExplanation->setText(tr("These are your Litecoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction."));
         ui->deleteAddress->setVisible(false);
         break;
     }
@@ -254,7 +254,7 @@ void AddressBookPage::done(int retval)
     // Figure out which address was selected, and return it
     QModelIndexList indexes = table->selectionModel()->selectedRows(AddressTableModel::Address);
 
-    Q_FOREACH (const QModelIndex& index, indexes) {
+    for (const QModelIndex& index : indexes) {
         QVariant address = table->model()->data(index);
         returnValue = address.toString();
     }
@@ -273,7 +273,7 @@ void AddressBookPage::on_exportButton_clicked()
     // CSV is currently the only supported format
     QString filename = GUIUtil::getSaveFileName(this,
         tr("Export Address List"), QString(),
-        tr("Comma separated file (*.csv)"), NULL);
+        tr("Comma separated file (*.csv)"), nullptr);
 
     if (filename.isNull())
         return;

@@ -130,8 +130,8 @@
         <translation>Kõvakettal olevate plokkide reindekseerimine...</translation>
     </message>
     <message>
-        <source>Litebitcoin</source>
-        <translation>Litebitcoin</translation>
+        <source>Litecoin</source>
+        <translation>Litecoin</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -760,8 +760,8 @@
         <translation>Valikud:</translation>
     </message>
     <message>
-        <source>Litebitcoin Core</source>
-        <translation>Litebitcoin Core</translation>
+        <source>Litecoin Core</source>
+        <translation>Litecoin Core</translation>
     </message>
     <message>
         <source>Information</source>

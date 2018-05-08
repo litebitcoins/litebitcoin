@@ -70,7 +70,7 @@ HelpMessageDialog::HelpMessageDialog(QWidget *parent, bool about) :
     } else {
         setWindowTitle(tr("Command-line options"));
         QString header = tr("Usage:") + "\n" +
-            "  litebitcoin-qt [" + tr("command-line options") + "]                     " + "\n";
+            "  litecoin-qt [" + tr("command-line options") + "]                     " + "\n";
         QTextCursor cursor(ui->helpMessage->document());
         cursor.insertText(version);
         cursor.insertBlock();
@@ -78,7 +78,7 @@ HelpMessageDialog::HelpMessageDialog(QWidget *parent, bool about) :
         cursor.insertBlock();
 
         std::string strUsage = HelpMessage(HMM_BITCOIN_QT);
-        const bool showDebug = GetBoolArg("-help-debug", false);
+        const bool showDebug = gArgs.GetBoolArg("-help-debug", false);
         strUsage += HelpMessageGroup(tr("UI Options:").toStdString());
         if (showDebug) {
             strUsage += HelpMessageOpt("-allowselfsignedrootcertificates", strprintf("Allow self signed root certificates (default: %u)", DEFAULT_SELFSIGNED_ROOTCERTS));
@@ -106,7 +106,7 @@ HelpMessageDialog::HelpMessageDialog(QWidget *parent, bool about) :
         QTextCharFormat bold;
         bold.setFontWeight(QFont::Bold);
 
-        Q_FOREACH (const QString &line, coreOptions.split("\n")) {
+        for (const QString &line : coreOptions.split("\n")) {
             if (line.startsWith("  -"))
             {
                 cursor.currentTable()->appendRows(1);

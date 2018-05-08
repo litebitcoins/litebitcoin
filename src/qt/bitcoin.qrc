@@ -1,6 +1,7 @@
-<RCC>
+<!DOCTYPE RCC><RCC version="1.0">
     <qresource prefix="/icons">
         <file alias="bitcoin">res/icons/bitcoin.png</file>
+        <file alias="litecoin_splash">res/icons/litecoin_splash.png</file>
         <file alias="address-book">res/icons/address-book.png</file>
         <file alias="quit">res/icons/quit.png</file>
         <file alias="send">res/icons/send.png</file>
@@ -53,7 +54,6 @@
         <file alias="hd_enabled">res/icons/hd_enabled.png</file>
         <file alias="hd_disabled">res/icons/hd_disabled.png</file>
         <file alias="network_disabled">res/icons/network_disabled.png</file>
-        <file alias="warning1">res/icons/warning1.png</file>
     </qresource>
     <qresource prefix="/movies">
         <file alias="spinner-000">res/movies/spinner-000.png</file>
@@ -92,23 +92,5 @@
         <file alias="spinner-033">res/movies/spinner-033.png</file>
         <file alias="spinner-034">res/movies/spinner-034.png</file>
         <file alias="spinner-035">res/movies/spinner-035.png</file>
-    </qresource>
-    <qresource prefix="/images">
-        <file alias="about2">res/images/about2.png</file>
-        <file alias="checked">res/images/checked.png</file>
-        <file alias="drkblue_downArrow">res/images/drkblue_downArrow.png</file>
-        <file alias="drkblue_downArrow_small">res/images/drkblue_downArrow_small.png</file>
-        <file alias="drkblue_leftArrow_small">res/images/drkblue_leftArrow_small.png</file>
-        <file alias="drkblue_qtreeview_selected">res/images/drkblue_qtreeview_selected.png</file>
-        <file alias="drkblue_rightArrow_small">res/images/drkblue_rightArrow_small.png</file>
-        <file alias="drkblue_upArrow_small">res/images/drkblue_upArrow_small.png</file>
-        <file alias="lbtcendbtc">res/images/lbtcendbtc.png</file>
-        <file alias="ltbcbg">res/images/ltbcbg.png</file>
-        <file alias="splash">res/images/splash.png</file>
-        <file alias="splash_testnet">res/images/splash_testnet.png</file>
-        <file alias="unchecked">res/images/unchecked.png</file>
-    </qresource>
-    <qresource prefix="/css">
-        <file alias="drkblue">res/css/drkblue.css</file>
     </qresource>
 </RCC>

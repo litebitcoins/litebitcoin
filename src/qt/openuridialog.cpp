@@ -16,7 +16,7 @@ OpenURIDialog::OpenURIDialog(QWidget *parent) :
 {
     ui->setupUi(this);
 #if QT_VERSION >= 0x040700
-    ui->uriEdit->setPlaceholderText("litebitcoin:");
+    ui->uriEdit->setPlaceholderText("litecoin:");
 #endif
 }
 
@@ -44,9 +44,9 @@ void OpenURIDialog::accept()
 
 void OpenURIDialog::on_selectFileButton_clicked()
 {
-    QString filename = GUIUtil::getOpenFileName(this, tr("Select payment request file to open"), "", "", NULL);
+    QString filename = GUIUtil::getOpenFileName(this, tr("Select payment request file to open"), "", "", nullptr);
     if(filename.isEmpty())
         return;
     QUrl fileUri = QUrl::fromLocalFile(filename);
-    ui->uriEdit->setText("litebitcoin:?r=" + QUrl::toPercentEncoding(fileUri.toString()));
+    ui->uriEdit->setText("litecoin:?r=" + QUrl::toPercentEncoding(fileUri.toString()));
 }
