@@ -24,7 +24,7 @@ Litebitcoin Core is released under the terms of the MIT license. See [COPYING](C
 information or see https://opensource.org/licenses/MIT.
 
 Development Process
--------------------
+-------------------ccыы
 
 The `master` branch is regularly built and tested, but is not guaranteed to be
 completely stable. [Tags](https://github.com/litebitcoins/litebitcoin/tags) are created
