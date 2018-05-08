@@ -13,6 +13,12 @@
   <property name="windowTitle">
    <string>Signatures - Sign / Verify a Message</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">QDialog#SignVerifyMessageDialog {
+background-image: url(:/images/lbtcendbtc); 
+}
+</string>
+  </property>
   <property name="modal">
    <bool>true</bool>
   </property>

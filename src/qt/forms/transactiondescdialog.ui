@@ -13,6 +13,53 @@
   <property name="windowTitle">
    <string notr="true">Transaction details</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">QDialog#TransactionDescDialog {
+border-image: url(':/images/ltbcbg') 0 0 0 0 stretch stretch;
+}
+
+QMessageBox {
+border-image: url(':/images/lbtcendbtc') 0 0 0 0 stretch stretch;
+}
+
+QMessageBox QLabel {
+color: rgb(255, 255, 255);
+}
+
+QPushButton { /* Global Button Style */
+background-color:qlineargradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0.494318 rgba(0, 0, 0, 118));
+border:0;
+border-radius:3px;
+color:#ffffff;
+font-size:12px;
+font-weight:bold;
+padding-left:25px;
+padding-right:25px;
+padding-top:5px;
+padding-bottom:5px;
+}
+
+QPushButton:hover {
+background-color:qlineargradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0.494318 rgba(0, 0, 0, 171));
+}
+
+QPushButton:focus {
+border:none;
+outline:none;
+}
+
+QPushButton:pressed {
+border:1px solid #FFFFFF;
+}
+
+QComboBox { /* Dropdown Menus */
+border:1px solid #000000;
+padding: 3px 5px 3px 5px;
+background:#fcfcfc;
+min-height:25px;
+color:#818181;
+}</string>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QTextEdit" name="detailText">

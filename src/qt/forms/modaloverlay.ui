@@ -50,9 +50,183 @@
       <item>
        <widget class="QWidget" name="contentWidget" native="true">
         <property name="styleSheet">
-         <string notr="true">#contentWidget { background: rgba(255,255,255,240); border-radius: 6px; }
+         <string notr="true">QWidget#contentWidget { background: rgba(21,28,47,255); border-radius: 12px; }
 
-QLabel { color: rgb(40,40,40);  }</string>
+
+QPushButton#closeButton { /* Global Button Style */
+background-color:qlineargradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0.494318 rgba(0, 0, 0, 118));
+border:0;
+border-radius:3px;
+color:#ffffff;
+font-size:12px;
+font-weight:bold;
+padding-left:25px;
+padding-right:25px;
+padding-top:5px;
+padding-bottom:5px;
+}
+
+QPushButton#closeButton:hover {
+background-color:qlineargradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0.494318 rgba(0, 0, 0, 171));
+}
+
+QPushButton#closeButton:focus {
+border:none;
+outline:none;
+}
+
+QPushButton#closeButton:pressed {
+border:1px solid #FFFFFF;
+}
+
+QComboBox { /* Dropdown Menus */
+border:1px solid #000000;
+padding: 3px 5px 3px 5px;
+background:#fcfcfc;
+min-height:25px;
+color:#818181;
+}
+
+QComboBox:checked {
+background:#f2f2f2;
+}
+
+QComboBox:editable {
+background: #3398CC;
+color:#616161;
+border:0px solid transparent;
+}
+
+QComboBox::drop-down {
+width:25px;
+border:0px;
+}
+
+QComboBox::down-arrow {
+border-image: url(':/images/drkblue_downArrow') 0 0 0 0 stretch stretch;
+}
+
+QComboBox QListView {
+background:#fff;
+border:1px solid #333;
+padding-right:1px;
+padding-left:1px;
+}
+
+QComboBox QAbstractItemView::item { margin:4px; }
+
+QComboBox::item {
+color:#818181;
+}
+
+QComboBox::item:alternate {
+background:#fff;
+}
+
+QComboBox::item:selected {
+border:0px solid transparent;
+background:#f2f2f2;
+}
+
+QComboBox::indicator {
+background-color:transparent;
+selection-background-color:transparent;
+color:transparent;
+selection-color:transparent;
+}
+
+QCheckBox {
+spacing: 5px;
+}
+
+QCheckBox::indicator {
+width: 16px;
+height: 16px;
+}
+
+QCheckBox::indicator:unchecked {
+image:url(':/images/unchecked');
+}
+
+QCheckBox::indicator:unchecked:hover {
+image:url(':/images/unchecked');
+}
+
+QCheckBox::indicator:unchecked:pressed {
+image:url(':/images/checked');
+}
+
+QCheckBox::indicator:checked {
+image:url(':/images/checked');
+}
+
+QCheckBox::indicator:checked:hover {
+image:url(':/images/checked');
+}
+
+QCheckBox::indicator:checked:pressed {
+image:url(':/images/unchecked');
+}
+
+QCheckBox::indicator:indeterminate:hover {
+image:url(':/images/unchecked');
+}
+
+QCheckBox::indicator:indeterminate:pressed {
+image:url(':/images/checked');
+}
+
+QAbstractSpinBox {
+border:1px solid #000000;
+padding: 3px 5px 3px 5px;
+background:#fcfcfc;
+min-height:25px;
+color:#818181;
+}
+
+QAbstractSpinBox::up-button {
+subcontrol-origin: border;
+subcontrol-position: top right;
+width:21px;
+background:#fcfcfc;
+border-left:0px;
+border-right:1px solid #000000;
+border-top:1px solid #000000;
+border-bottom:0px;
+padding-right:1px;
+padding-left:5px;
+padding-top:2px;
+}
+
+QAbstractSpinBox::up-arrow {
+image:url(':/images/drkblue_upArrow_small');
+}
+
+QAbstractSpinBox::down-button {
+subcontrol-origin: border;
+subcontrol-position: bottom right;
+width:21px;
+background:#fcfcfc;
+border-top:0px;
+border-left:0px;
+border-right:1px solid #000000;
+border-bottom:1px solid #000000;
+padding-right:1px;
+padding-left:5px;
+padding-bottom:2px;
+}
+
+QAbstractSpinBox::down-arrow {
+image:url(':/images/drkblue_downArrow_small');
+}
+
+QMessageBox {
+border-image: url(':/images/lbtcendbtc') 0 0 0 0 stretch stretch;
+}
+
+QMessageBox QLabel {
+color: rgb(255, 255, 255);
+}</string>
         </property>
         <layout class="QVBoxLayout" name="verticalLayoutSub" stretch="1,0,0,0">
          <property name="spacing">
@@ -81,26 +255,9 @@ QLabel { color: rgb(40,40,40);  }</string>
               <number>0</number>
              </property>
              <item>
-              <widget class="QPushButton" name="warningIcon">
-               <property name="enabled">
-                <bool>false</bool>
-               </property>
+              <widget class="QLabel" name="label">
                <property name="text">
-                <string/>
-               </property>
-               <property name="icon">
-                <iconset>
-                 <normaloff>:/icons/warning</normaloff>
-                 <disabledoff>:/icons/warning</disabledoff>:/icons/warning</iconset>
-               </property>
-               <property name="iconSize">
-                <size>
-                 <width>48</width>
-                 <height>48</height>
-                </size>
-               </property>
-               <property name="flat">
-                <bool>true</bool>
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/icons/warning1&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
               </widget>
              </item>
@@ -129,6 +286,43 @@ QLabel { color: rgb(40,40,40);  }</string>
              </property>
              <item>
               <widget class="QLabel" name="infoText">
+               <property name="palette">
+                <palette>
+                 <active>
+                  <colorrole role="WindowText">
+                   <brush brushstyle="SolidPattern">
+                    <color alpha="255">
+                     <red>255</red>
+                     <green>255</green>
+                     <blue>255</blue>
+                    </color>
+                   </brush>
+                  </colorrole>
+                 </active>
+                 <inactive>
+                  <colorrole role="WindowText">
+                   <brush brushstyle="SolidPattern">
+                    <color alpha="255">
+                     <red>255</red>
+                     <green>255</green>
+                     <blue>255</blue>
+                    </color>
+                   </brush>
+                  </colorrole>
+                 </inactive>
+                 <disabled>
+                  <colorrole role="WindowText">
+                   <brush brushstyle="SolidPattern">
+                    <color alpha="255">
+                     <red>120</red>
+                     <green>120</green>
+                     <blue>120</blue>
+                    </color>
+                   </brush>
+                  </colorrole>
+                 </disabled>
+                </palette>
+               </property>
                <property name="text">
                 <string>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the litebitcoin network, as detailed below.</string>
                </property>
@@ -142,6 +336,43 @@ QLabel { color: rgb(40,40,40);  }</string>
              </item>
              <item>
               <widget class="QLabel" name="infoTextStrong">
+               <property name="palette">
+                <palette>
+                 <active>
+                  <colorrole role="WindowText">
+                   <brush brushstyle="SolidPattern">
+                    <color alpha="255">
+                     <red>255</red>
+                     <green>255</green>
+                     <blue>255</blue>
+                    </color>
+                   </brush>
+                  </colorrole>
+                 </active>
+                 <inactive>
+                  <colorrole role="WindowText">
+                   <brush brushstyle="SolidPattern">
+                    <color alpha="255">
+                     <red>255</red>
+                     <green>255</green>
+                     <blue>255</blue>
+                    </color>
+                   </brush>
+                  </colorrole>
+                 </inactive>
+                 <disabled>
+                  <colorrole role="WindowText">
+                   <brush brushstyle="SolidPattern">
+                    <color alpha="255">
+                     <red>120</red>
+                     <green>120</green>
+                     <blue>120</blue>
+                    </color>
+                   </brush>
+                  </colorrole>
+                 </disabled>
+                </palette>
+               </property>
                <property name="font">
                 <font>
                  <weight>75</weight>
@@ -205,6 +436,43 @@ QLabel { color: rgb(40,40,40);  }</string>
            </property>
            <item row="0" column="0">
             <widget class="QLabel" name="labelNumberOfBlocksLeft">
+             <property name="palette">
+              <palette>
+               <active>
+                <colorrole role="WindowText">
+                 <brush brushstyle="SolidPattern">
+                  <color alpha="255">
+                   <red>255</red>
+                   <green>255</green>
+                   <blue>255</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+               </active>
+               <inactive>
+                <colorrole role="WindowText">
+                 <brush brushstyle="SolidPattern">
+                  <color alpha="255">
+                   <red>255</red>
+                   <green>255</green>
+                   <blue>255</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+               </inactive>
+               <disabled>
+                <colorrole role="WindowText">
+                 <brush brushstyle="SolidPattern">
+                  <color alpha="255">
+                   <red>120</red>
+                   <green>120</green>
+                   <blue>120</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+               </disabled>
+              </palette>
+             </property>
              <property name="font">
               <font>
                <weight>75</weight>
@@ -218,6 +486,43 @@ QLabel { color: rgb(40,40,40);  }</string>
            </item>
            <item row="0" column="1">
             <widget class="QLabel" name="numberOfBlocksLeft">
+             <property name="palette">
+              <palette>
+               <active>
+                <colorrole role="WindowText">
+                 <brush brushstyle="SolidPattern">
+                  <color alpha="255">
+                   <red>255</red>
+                   <green>255</green>
+                   <blue>255</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+               </active>
+               <inactive>
+                <colorrole role="WindowText">
+                 <brush brushstyle="SolidPattern">
+                  <color alpha="255">
+                   <red>255</red>
+                   <green>255</green>
+                   <blue>255</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+               </inactive>
+               <disabled>
+                <colorrole role="WindowText">
+                 <brush brushstyle="SolidPattern">
+                  <color alpha="255">
+                   <red>120</red>
+                   <green>120</green>
+                   <blue>120</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+               </disabled>
+              </palette>
+             </property>
              <property name="text">
               <string>Unknown...</string>
              </property>
@@ -225,6 +530,43 @@ QLabel { color: rgb(40,40,40);  }</string>
            </item>
            <item row="1" column="0">
             <widget class="QLabel" name="labelLastBlockTime">
+             <property name="palette">
+              <palette>
+               <active>
+                <colorrole role="WindowText">
+                 <brush brushstyle="SolidPattern">
+                  <color alpha="255">
+                   <red>255</red>
+                   <green>255</green>
+                   <blue>255</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+               </active>
+               <inactive>
+                <colorrole role="WindowText">
+                 <brush brushstyle="SolidPattern">
+                  <color alpha="255">
+                   <red>255</red>
+                   <green>255</green>
+                   <blue>255</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+               </inactive>
+               <disabled>
+                <colorrole role="WindowText">
+                 <brush brushstyle="SolidPattern">
+                  <color alpha="255">
+                   <red>120</red>
+                   <green>120</green>
+                   <blue>120</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+               </disabled>
+              </palette>
+             </property>
              <property name="font">
               <font>
                <weight>75</weight>
@@ -244,6 +586,43 @@ QLabel { color: rgb(40,40,40);  }</string>
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
+             <property name="palette">
+              <palette>
+               <active>
+                <colorrole role="WindowText">
+                 <brush brushstyle="SolidPattern">
+                  <color alpha="255">
+                   <red>255</red>
+                   <green>255</green>
+                   <blue>255</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+               </active>
+               <inactive>
+                <colorrole role="WindowText">
+                 <brush brushstyle="SolidPattern">
+                  <color alpha="255">
+                   <red>255</red>
+                   <green>255</green>
+                   <blue>255</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+               </inactive>
+               <disabled>
+                <colorrole role="WindowText">
+                 <brush brushstyle="SolidPattern">
+                  <color alpha="255">
+                   <red>120</red>
+                   <green>120</green>
+                   <blue>120</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+               </disabled>
+              </palette>
+             </property>
              <property name="text">
               <string>Unknown...</string>
              </property>
@@ -251,6 +630,43 @@ QLabel { color: rgb(40,40,40);  }</string>
            </item>
            <item row="2" column="0">
             <widget class="QLabel" name="labelSyncDone">
+             <property name="palette">
+              <palette>
+               <active>
+                <colorrole role="WindowText">
+                 <brush brushstyle="SolidPattern">
+                  <color alpha="255">
+                   <red>255</red>
+                   <green>255</green>
+                   <blue>255</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+               </active>
+               <inactive>
+                <colorrole role="WindowText">
+                 <brush brushstyle="SolidPattern">
+                  <color alpha="255">
+                   <red>255</red>
+                   <green>255</green>
+                   <blue>255</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+               </inactive>
+               <disabled>
+                <colorrole role="WindowText">
+                 <brush brushstyle="SolidPattern">
+                  <color alpha="255">
+                   <red>120</red>
+                   <green>120</green>
+                   <blue>120</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+               </disabled>
+              </palette>
+             </property>
              <property name="font">
               <font>
                <weight>75</weight>
@@ -266,6 +682,43 @@ QLabel { color: rgb(40,40,40);  }</string>
             <layout class="QHBoxLayout" name="horizontalLayoutSync" stretch="0,1">
              <item>
               <widget class="QLabel" name="percentageProgress">
+               <property name="palette">
+                <palette>
+                 <active>
+                  <colorrole role="WindowText">
+                   <brush brushstyle="SolidPattern">
+                    <color alpha="255">
+                     <red>255</red>
+                     <green>255</green>
+                     <blue>255</blue>
+                    </color>
+                   </brush>
+                  </colorrole>
+                 </active>
+                 <inactive>
+                  <colorrole role="WindowText">
+                   <brush brushstyle="SolidPattern">
+                    <color alpha="255">
+                     <red>255</red>
+                     <green>255</green>
+                     <blue>255</blue>
+                    </color>
+                   </brush>
+                  </colorrole>
+                 </inactive>
+                 <disabled>
+                  <colorrole role="WindowText">
+                   <brush brushstyle="SolidPattern">
+                    <color alpha="255">
+                     <red>120</red>
+                     <green>120</green>
+                     <blue>120</blue>
+                    </color>
+                   </brush>
+                  </colorrole>
+                 </disabled>
+                </palette>
+               </property>
                <property name="text">
                 <string notr="true">~</string>
                </property>
@@ -285,6 +738,43 @@ QLabel { color: rgb(40,40,40);  }</string>
            </item>
            <item row="4" column="0">
             <widget class="QLabel" name="labelProgressIncrease">
+             <property name="palette">
+              <palette>
+               <active>
+                <colorrole role="WindowText">
+                 <brush brushstyle="SolidPattern">
+                  <color alpha="255">
+                   <red>255</red>
+                   <green>255</green>
+                   <blue>255</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+               </active>
+               <inactive>
+                <colorrole role="WindowText">
+                 <brush brushstyle="SolidPattern">
+                  <color alpha="255">
+                   <red>255</red>
+                   <green>255</green>
+                   <blue>255</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+               </inactive>
+               <disabled>
+                <colorrole role="WindowText">
+                 <brush brushstyle="SolidPattern">
+                  <color alpha="255">
+                   <red>120</red>
+                   <green>120</green>
+                   <blue>120</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+               </disabled>
+              </palette>
+             </property>
              <property name="font">
               <font>
                <weight>75</weight>
@@ -298,6 +788,43 @@ QLabel { color: rgb(40,40,40);  }</string>
            </item>
            <item row="4" column="1">
             <widget class="QLabel" name="progressIncreasePerH">
+             <property name="palette">
+              <palette>
+               <active>
+                <colorrole role="WindowText">
+                 <brush brushstyle="SolidPattern">
+                  <color alpha="255">
+                   <red>255</red>
+                   <green>255</green>
+                   <blue>255</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+               </active>
+               <inactive>
+                <colorrole role="WindowText">
+                 <brush brushstyle="SolidPattern">
+                  <color alpha="255">
+                   <red>255</red>
+                   <green>255</green>
+                   <blue>255</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+               </inactive>
+               <disabled>
+                <colorrole role="WindowText">
+                 <brush brushstyle="SolidPattern">
+                  <color alpha="255">
+                   <red>120</red>
+                   <green>120</green>
+                   <blue>120</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+               </disabled>
+              </palette>
+             </property>
              <property name="text">
               <string>calculating...</string>
              </property>
@@ -305,6 +832,43 @@ QLabel { color: rgb(40,40,40);  }</string>
            </item>
            <item row="5" column="0">
             <widget class="QLabel" name="labelEstimatedTimeLeft">
+             <property name="palette">
+              <palette>
+               <active>
+                <colorrole role="WindowText">
+                 <brush brushstyle="SolidPattern">
+                  <color alpha="255">
+                   <red>255</red>
+                   <green>255</green>
+                   <blue>255</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+               </active>
+               <inactive>
+                <colorrole role="WindowText">
+                 <brush brushstyle="SolidPattern">
+                  <color alpha="255">
+                   <red>255</red>
+                   <green>255</green>
+                   <blue>255</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+               </inactive>
+               <disabled>
+                <colorrole role="WindowText">
+                 <brush brushstyle="SolidPattern">
+                  <color alpha="255">
+                   <red>120</red>
+                   <green>120</green>
+                   <blue>120</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+               </disabled>
+              </palette>
+             </property>
              <property name="font">
               <font>
                <weight>75</weight>
@@ -318,6 +882,43 @@ QLabel { color: rgb(40,40,40);  }</string>
            </item>
            <item row="5" column="1">
             <widget class="QLabel" name="expectedTimeLeft">
+             <property name="palette">
+              <palette>
+               <active>
+                <colorrole role="WindowText">
+                 <brush brushstyle="SolidPattern">
+                  <color alpha="255">
+                   <red>255</red>
+                   <green>255</green>
+                   <blue>255</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+               </active>
+               <inactive>
+                <colorrole role="WindowText">
+                 <brush brushstyle="SolidPattern">
+                  <color alpha="255">
+                   <red>255</red>
+                   <green>255</green>
+                   <blue>255</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+               </inactive>
+               <disabled>
+                <colorrole role="WindowText">
+                 <brush brushstyle="SolidPattern">
+                  <color alpha="255">
+                   <red>120</red>
+                   <green>120</green>
+                   <blue>120</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+               </disabled>
+              </palette>
+             </property>
              <property name="text">
               <string>calculating...</string>
              </property>

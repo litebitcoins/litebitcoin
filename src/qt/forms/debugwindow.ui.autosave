@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>740</width>
-    <height>461</height>
+    <height>464</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -1695,7 +1695,7 @@ color: rgb(255, 255, 255);
             <string/>
            </property>
            <property name="icon">
-            <iconset resource="../bitcoin.qrc">
+            <iconset resource="../../../../litebitcoin/src/qt/bitcoin.qrc">
              <normaloff>:/icons/fontsmaller</normaloff>:/icons/fontsmaller</iconset>
            </property>
            <property name="iconSize">
@@ -1727,7 +1727,7 @@ color: rgb(255, 255, 255);
             <string/>
            </property>
            <property name="icon">
-            <iconset resource="../bitcoin.qrc">
+            <iconset resource="../../../../litebitcoin/src/qt/bitcoin.qrc">
              <normaloff>:/icons/fontbigger</normaloff>:/icons/fontbigger</iconset>
            </property>
            <property name="iconSize">
@@ -1762,7 +1762,7 @@ color: rgb(255, 255, 255);
             <string/>
            </property>
            <property name="icon">
-            <iconset resource="../bitcoin.qrc">
+            <iconset resource="../../../../litebitcoin/src/qt/bitcoin.qrc">
              <normaloff>:/icons/remove</normaloff>:/icons/remove</iconset>
            </property>
            <property name="shortcut">
@@ -1817,7 +1817,7 @@ color: rgb(255, 255, 255);
             <string/>
            </property>
            <property name="icon">
-            <iconset resource="../bitcoin.qrc">
+            <iconset resource="../../../../litebitcoin/src/qt/bitcoin.qrc">
              <normaloff>:/icons/prompticon</normaloff>
              <disabledoff>:/icons/prompticon</disabledoff>:/icons/prompticon</iconset>
            </property>
@@ -4314,8 +4314,6 @@ color: rgb(255, 255, 255);
    </slots>
   </customwidget>
  </customwidgets>
- <resources>
-  <include location="../bitcoin.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>
