@@ -59,5 +59,6 @@ RPC Port: 19038
 
 Total coin supply: 1 Billion Lite-Bitcoins
 
+-------------------------------------------
 
 
