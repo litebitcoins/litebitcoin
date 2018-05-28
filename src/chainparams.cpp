@@ -79,6 +79,7 @@ public:
         consensus.BIP34Hash = uint256S("90e718e6878f4b7ae4de4ae83db75881d00ca017f5a117c2054798bcb76c4178");
         consensus.BIP65Height = 3350; // ?
         consensus.BIP66Height = 3341; // ?
+		consensus.GPUHeight = 68001;
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); 
         consensus.nPowTargetTimespan = 10 * 60; // 10 min
         consensus.nPowTargetSpacing = 5 * 60;
@@ -170,6 +171,7 @@ public:
         consensus.BIP34Hash = uint256S("8075c771ed8b495ffd943980a95f702ab34fce3c8c54e379548bda33cc8c0573");
         consensus.BIP65Height = 10; // 8075c771ed8b495ffd943980a95f702ab34fce3c8c54e379548bda33cc8c0573
         consensus.BIP66Height = 20; // 8075c771ed8b495ffd943980a95f702ab34fce3c8c54e379548bda33cc8c0573
+		consensus.GPUHeight = 68001;
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.nPowTargetTimespan = 10 * 60; // 10 min
         consensus.nPowTargetSpacing = 5 * 60;
@@ -253,6 +255,7 @@ public:
         consensus.BIP34Hash = uint256();
         consensus.BIP65Height = 6; // BIP65 activated on regtest (Used in rpc activation tests)
         consensus.BIP66Height = 20; // BIP66 activated on regtest (Used in rpc activation tests)
+		consensus.GPUHeight = 68001;
         consensus.powLimit = uint256S("7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.nPowTargetTimespan = 10 * 60; // 10 min
         consensus.nPowTargetSpacing = 5 * 60;
