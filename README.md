@@ -41,9 +41,13 @@ Name: LiteBitcoin
 
 Ticker: LBTC
 
-PoW Algorithm: Scrypt
+PoW Algorithm: Scrypt (before fork, latest block is 68000)
 
-Block Reward: 500 LBTC
+PoW Algorithm: Neoscrypt (after fork,  start block is 68001)
+
+Block Reward: 500 LBTC (before fork, latest block is 68000)
+
+Block Reward: 125 LBTC (after fork, start block is 68001)
 
 Address letter: 2
 
