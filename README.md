@@ -45,7 +45,7 @@ PoW Algorithm: Scrypt (before fork, till block 68000)
 Block Reward: 500 LBTC  (before fork, till block 68000)
 
 PoW Algorithm: NeoScript (After fork, from block 68001)
-Block Reward: 125 LBTC  (After fork, from block 68001)
+Block Reward: 125 LBTC  (before fork, from block 68001)
 
 Address letter: 2
 
