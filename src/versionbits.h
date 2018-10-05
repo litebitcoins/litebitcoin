@@ -19,6 +19,8 @@ static const int32_t VERSIONBITS_NUM_BITS = 29;
 
 static const int32_t VERSIONBITS_FORK_GPU = 0x40000000UL;
 
+static const int32_t VERSIONBITS_FORK_CPU = 0x50000000UL;
+
 enum ThresholdState {
     THRESHOLD_DEFINED,
     THRESHOLD_STARTED,
