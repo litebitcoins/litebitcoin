@@ -111,6 +111,9 @@ unsigned int static DarkGravityWave(const CBlockIndex* pindexLast, const CBlockH
 	if (pindexLast->nHeight+1 == 68001)
         return nProofOfWorkLimit;
 	
+	if (pindexLast->nHeight+1 == 95531)
+        return nProofOfWorkLimit;
+	
     if (BlockLastSolved == NULL || BlockLastSolved->nHeight == 0 || BlockLastSolved->nHeight < PastBlocksMin) {
         return UintToArith256(params.powLimit).GetCompact();
     }
@@ -159,7 +162,57 @@ unsigned int static DarkGravityWave_V2(const CBlockIndex* pindexLast, const Cons
     /* current difficulty formula, dash - DarkGravity v3, written by Evan Duffield - evan@dash.org */
     const arith_uint256 bnPowLimit = UintToArith256(params.powLimit);
     int64_t nPastBlocks = 24;
+	
+    // make sure we have at least (nPastBlocks + 1) blocks, otherwise just return powLimit
+    if (!pindexLast || pindexLast->nHeight < nPastBlocks) {
+        return bnPowLimit.GetCompact();
+    }
 
+    const CBlockIndex *pindex = pindexLast;
+    arith_uint256 bnPastTargetAvg;
+
+    for (unsigned int nCountBlocks = 1; nCountBlocks <= nPastBlocks; nCountBlocks++) {
+        arith_uint256 bnTarget = arith_uint256().SetCompact(pindex->nBits);
+        if (nCountBlocks == 1) {
+            bnPastTargetAvg = bnTarget;
+        } else {
+            // NOTE: that's not an average really...
+            bnPastTargetAvg = (bnPastTargetAvg * nCountBlocks + bnTarget) / (nCountBlocks + 1);
+        }
+
+        if(nCountBlocks != nPastBlocks) {
+            assert(pindex->pprev); // should never fail
+            pindex = pindex->pprev;
+        }
+    }
+
+    arith_uint256 bnNew(bnPastTargetAvg);
+
+    int64_t nActualTimespan = pindexLast->GetBlockTime() - pindex->GetBlockTime();
+    // NOTE: is this accurate? nActualTimespan counts it for (nPastBlocks - 1) blocks only...
+    int64_t nTargetTimespan = nPastBlocks * params.nPowTargetSpacing;
+
+    if (nActualTimespan < nTargetTimespan/3)
+        nActualTimespan = nTargetTimespan/3;
+    if (nActualTimespan > nTargetTimespan*3)
+        nActualTimespan = nTargetTimespan*3;
+
+    // Retarget
+    bnNew *= nActualTimespan;
+    bnNew /= nTargetTimespan;
+
+    if (bnNew > bnPowLimit) {
+        bnNew = bnPowLimit;
+    }
+
+    return bnNew.GetCompact();
+}
+
+unsigned int static DarkGravityWave_V3(const CBlockIndex* pindexLast, const Consensus::Params& params) {
+    /* current difficulty formula, dash - DarkGravity v3, written by Evan Duffield - evan@dash.org */
+    const arith_uint256 bnPowLimit = UintToArith256(params.powLimit);
+    int64_t nPastBlocks = 12;
+	
     // make sure we have at least (nPastBlocks + 1) blocks, otherwise just return powLimit
     if (!pindexLast || pindexLast->nHeight < nPastBlocks) {
         return bnPowLimit.GetCompact();
@@ -211,10 +264,14 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
  if (pindexLast->nHeight+1 < 3340)    { DiffMode = 1; }
  if (pindexLast->nHeight+1 >= 3340)   { DiffMode = 2; }
  if (pindexLast->nHeight+1 >= 68002)   { DiffMode = 3; }
+ if (pindexLast->nHeight+1 >= 95531)   { DiffMode = 4; }
+ if (pindexLast->nHeight+1 >= 95532)   { DiffMode = 5; }
  if (DiffMode == 1) { return GetNextWorkRequired_V1(pindexLast, pblock, params); }
  if (DiffMode == 2) { return DarkGravityWave(pindexLast, pblock, params); }
  if (DiffMode == 3) { return DarkGravityWave_V2(pindexLast, params); }
- return DarkGravityWave_V2(pindexLast, params);
+ if (DiffMode == 4) { return DarkGravityWave(pindexLast, pblock, params); }
+ if (DiffMode == 5) { return DarkGravityWave_V3(pindexLast, params); }
+ return DarkGravityWave_V3(pindexLast, params);
 }
 
 bool CheckProofOfWork(uint256 hash, unsigned int nBits, const Consensus::Params& params)
