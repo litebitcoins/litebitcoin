@@ -48,6 +48,7 @@ struct Params {
     int BIP66Height;
 	/** this is param for fork block height where they become active */
 	int GPUHeight;
+	int CPUHeight;
     /**
      * Minimum blocks including miner confirmation of the total of 2016 blocks in a retargeting period,
      * (nPowTargetTimespan / nPowTargetSpacing) which is also used for BIP9 deployments.
