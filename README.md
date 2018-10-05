@@ -45,6 +45,8 @@ PoW Algorithm: Scrypt (before fork, latest block is 68000)
 
 PoW Algorithm: Neoscrypt (after fork,  start block is 68001)
 
+Pow Algorithm: YescryptR32 (after 2 fork, start block is 95531)
+
 Block Reward: 500 LBTC (before fork, latest block is 68000)
 
 Block Reward: 125 LBTC (after fork, start block is 68001)
