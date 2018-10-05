@@ -1774,10 +1774,13 @@ int32_t ComputeBlockVersion(const CBlockIndex* pindexPrev, const Consensus::Para
 {
     LOCK(cs_main);
     int32_t nVersion = VERSIONBITS_TOP_BITS;
+	
+	if ((pindexPrev && pindexPrev->nHeight + 1 >= params.GPUHeight) && (pindexPrev && pindexPrev->nHeight + 1 < params.CPUHeight))
+			nVersion |= VERSIONBITS_FORK_GPU;
 
-	if (pindexPrev && pindexPrev->nHeight + 1 >= params.GPUHeight)
-    	nVersion |= VERSIONBITS_FORK_GPU;
-
+	if (pindexPrev && pindexPrev->nHeight + 1 >= params.CPUHeight)
+    	    nVersion |= VERSIONBITS_FORK_CPU;
+	
     for (int i = 0; i < (int)Consensus::MAX_VERSION_BITS_DEPLOYMENTS; i++) {
         ThresholdState state = VersionBitsState(pindexPrev, params, (Consensus::DeploymentPos)i, versionbitscache);
         if (state == THRESHOLD_LOCKED_IN || state == THRESHOLD_STARTED) {
@@ -3185,7 +3188,8 @@ static bool ContextualCheckBlockHeader(const CBlockHeader& block, CValidationSta
     if((block.nVersion < 2 && nHeight >= consensusParams.BIP34Height) ||
        (block.nVersion < 3 && nHeight >= consensusParams.BIP66Height) ||
        (block.nVersion < 4 && nHeight >= consensusParams.BIP65Height) ||
-	   ( !(block.nVersion  & VERSIONBITS_FORK_GPU) && nHeight >= consensusParams.GPUHeight))
+       (block.nVersion < 1610612736 && nHeight >= consensusParams.GPUHeight) ||
+       (block.nVersion < 1879048192 && nHeight >= consensusParams.CPUHeight))
             return state.Invalid(false, REJECT_OBSOLETE, strprintf("bad-version(0x%08x)", block.nVersion),
                                  strprintf("rejected nVersion=0x%08x block", block.nVersion));
 
@@ -3301,12 +3305,16 @@ static bool AcceptBlockHeader(const CBlockHeader& block, CValidationState& state
         if (mi == mapBlockIndex.end())
             return state.DoS(10, error("%s: prev block not found", __func__), 0, "prev-blk-not-found");
         pindexPrev = (*mi).second;
-		if  ( !(block.nVersion & VERSIONBITS_FORK_GPU) && pindexPrev->nHeight + 1 >= chainparams.GetConsensus().GPUHeight) {
+		if  (( !(block.nVersion == 1610612736) && pindexPrev->nHeight + 1 >= chainparams.GetConsensus().GPUHeight) && ( !(block.nVersion == 1610612736) && pindexPrev->nHeight + 1 < chainparams.GetConsensus().CPUHeight)) {
         	state.Invalid(false, REJECT_OBSOLETE, strprintf("bad-version(0x%08x)", block.nVersion), strprintf("rejected nVersion=0x%08x block", block.nVersion));
         	return error("%s: Reject Old nVersion After Fork: %s, %s", __func__, hash.ToString(), FormatStateMessage(state));
         }
 
-
+		if  ( !(block.nVersion == 1879048192) && pindexPrev->nHeight + 1 >= chainparams.GetConsensus().CPUHeight) {
+        	state.Invalid(false, REJECT_OBSOLETE, strprintf("bad-version(0x%08x)", block.nVersion), strprintf("rejected nVersion=0x%08x block", block.nVersion));
+        	return error("%s: Reject Old nVersion After Fork: %s, %s", __func__, hash.ToString(), FormatStateMessage(state));
+        }
+		
         if (miSelf != mapBlockIndex.end()) {
             // Block header is already known.
             pindex = miSelf->second;
