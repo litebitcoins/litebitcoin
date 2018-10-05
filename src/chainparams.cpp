@@ -80,6 +80,7 @@ public:
         consensus.BIP65Height = 3350; // ?
         consensus.BIP66Height = 3341; // ?
         consensus.GPUHeight = 68001;
+        consensus.CPUHeight = 95531;
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); 
         consensus.nPowTargetTimespan = 10 * 60; // 10 min
         consensus.nPowTargetSpacing = 5 * 60;
@@ -146,15 +147,33 @@ public:
         checkpointData = (CCheckpointData) {
             {
                 {  1, uint256S("0x90e718e6878f4b7ae4de4ae83db75881d00ca017f5a117c2054798bcb76c4178")},
+                {  3339, uint256S("0x9ead80bab49ae5b7093079e682d13363f64a721fee01d7d866be4d2bd289640c")},
+                {  3340, uint256S("0xc22882a5ecee1fc693f562950395eaab0fed8ee787e14e6c48efb6a4e9f3bb0d")},
+                {  3350, uint256S("0x1b369985f1d73748e12b9e78e9d8ab12f9565465966b9bbe2b25b93c18fbb347")},
+                {  10001, uint256S("0x833e1f3f4ede501e4f459ca702a5d5909dd19a4a36a3ce761fd16e271c98dc48")},
+                {  20001, uint256S("0xeb792ffd0a4c8d2fa78810d8c0ec545ba8c27347041e1fcdaa5bb31c8ca9b259")},
+                {  30653, uint256S("0xcc0541962caa774dfeb026689e91782a4215e2a6d53058e50be33825c490f927")},
+                {  41632, uint256S("0xa5d4160a2dceb734570f43b178c91f2f7002c7557b7f058cfd5d0770fd1a87ac")},
+                {  55379, uint256S("0x7e16eb1bf5f2b7b8f0c1d2b7690e1e236725763933285bb842c8e586c723f5a6")},
+                {  60000, uint256S("0x10451b4d65eb588c550a44744625982024a01bab7cfba6c9bf3e1f4845f12809")},
+                {  68000, uint256S("0x65b2b87c8f0a6dc940561ac36de99947a8e858991f2d3756fabf622b819de487")},
+                {  68001, uint256S("0xa1e77b328bbf3000ffa8da60741e4b2d22647c2b219e5223fd6f91f0b18d663c")},
+                {  68002, uint256S("0x19897fb9fc0cb1a26e6013f27a5bf58a56f078ffc0fa594994ade5d171daeaf2")},
+                {  70676, uint256S("0xebdd706894259a6194ca2ea87d72cb2f827eceddc3450aa20ac0a72c7846e3d4")},
+                {  81058, uint256S("0x6418d8cfbca3fbe641c58479665214cab9ed8c2dc9702de5ef4462eb3288c20c")},
+                {  89908, uint256S("0x434b44571e9f6aa15323bd05df3e22fbdf9ca993c193868a8938e9cdfcb13df5")},
+                {  90609, uint256S("0x8c42888b65f6aa16b12bd7ca3f5da22140e2bdf0aa5e80f17b52096cb7792dd6")},
+                {  95518, uint256S("0x4a0756ae559fe093b8ada07601a9248c51d5b0d94d82be508a29e5e141f28861")},
+                {  95530, uint256S("0xba26abfd85eba846202db3c6692b1bec49998d9c9a33982a6c6a2e3e06a6bc9c")},
             }
         };
 
         chainTxData = ChainTxData{
-            // Data as of block 59c9b9d3fec105bdc716d84caa7579503d5b05b73618d0bf2d5fa639f780a011 (height 1353397).
-            1498217039, // * UNIX timestamp of last known number of transactions
-            1,  // * total number of transactions between genesis and that timestamp
+            // Data as of block 4a0756ae559fe093b8ada07601a9248c51d5b0d94d82be508a29e5e141f28861 (height 95518).
+            1538726344, // * UNIX timestamp of last known number of transactions
+            123388,  // * total number of transactions between genesis and that timestamp
                     //   (the tx=... number in the SetBestChain debug.log lines)
-            0.06     // * estimated number of transactions per second after that timestamp
+            0.02439024390243903     // * estimated number of transactions per second after that timestamp
         };
     }
 };
@@ -172,6 +191,7 @@ public:
         consensus.BIP65Height = 10; // 8075c771ed8b495ffd943980a95f702ab34fce3c8c54e379548bda33cc8c0573
         consensus.BIP66Height = 20; // 8075c771ed8b495ffd943980a95f702ab34fce3c8c54e379548bda33cc8c0573
         consensus.GPUHeight = 68001;
+        consensus.CPUHeight = 95531;
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.nPowTargetTimespan = 10 * 60; // 10 min
         consensus.nPowTargetSpacing = 5 * 60;
@@ -256,6 +276,7 @@ public:
         consensus.BIP65Height = 6; // BIP65 activated on regtest (Used in rpc activation tests)
         consensus.BIP66Height = 20; // BIP66 activated on regtest (Used in rpc activation tests)
         consensus.GPUHeight = 68001;
+        consensus.CPUHeight = 95531;
         consensus.powLimit = uint256S("7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.nPowTargetTimespan = 10 * 60; // 10 min
         consensus.nPowTargetSpacing = 5 * 60;
