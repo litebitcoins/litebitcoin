@@ -13,6 +13,8 @@
 #include "versionbits.h"
 #include "crypto/neoscrypt.h"
 
+extern "C" void yescrypt_hash(const char *input, char *output);
+
 uint256 CBlockHeader::GetHash() const
 {
     return SerializeHash(*this);
@@ -22,6 +24,13 @@ uint256 CBlockHeader::GetPoWSHash() const
 {
     uint256 thash;
     scrypt_1024_1_1_256(BEGIN(nVersion), BEGIN(thash));
+    return thash;
+}
+
+uint256 CBlockHeader::GetPoWYHash() const
+{
+    uint256 thash;
+    yescrypt_hash(BEGIN(nVersion), BEGIN(thash));
     return thash;
 }
 
@@ -36,7 +45,15 @@ uint256 CBlockHeader::GetPoWNSHash() const
 
 uint256 CBlockHeader::GetPoWHash() const
 {
-	if (nVersion & VERSIONBITS_FORK_GPU)
+    if (nVersion == 1879048192)
+		return GetPoWYHash();
+	else
+		return GetPoWDHash();
+}
+
+uint256 CBlockHeader::GetPoWDHash() const
+{
+	if (nVersion == 1610612736)
 		return GetPoWNSHash();
 	else
 		return GetPoWSHash();

@@ -68,6 +68,10 @@ public:
 
 	uint256 GetPoWNSHash() const;
 
+	uint256 GetPoWYHash() const;
+	
+	uint256 GetPoWDHash() const;
+		
     int64_t GetBlockTime() const
     {
         return (int64_t)nTime;
